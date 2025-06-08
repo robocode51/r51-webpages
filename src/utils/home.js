@@ -1,13 +1,12 @@
 import imagesLoaded from 'imagesloaded';
 import charming from 'charming';
 import anime from 'animejs';
-export function initHome() {
-
+export function initHome(pageType='home') {
     function debounce(func, wait, immediate) {
         var timeout;
-        return function() {
+        return function () {
             var context = this, args = arguments;
-            var later = function() {
+            var later = function () {
                 timeout = null;
                 if (!immediate) func.apply(context, args);
             };
@@ -19,44 +18,28 @@ export function initHome() {
     };
 
     // Window size.
-    let win = {width: window.innerWidth, height: window.innerHeight};
-    
+    let win = { width: window.innerWidth, height: window.innerHeight };
+
     // some animation settings.
-    // const settings = {
-    //     image: {duration: 900, delay: 0, easing: [0.8,0,0.2,1]},
-    //     more: {duration: 900, delay: 0, easing: [0.8,0,0.2,1]},
-    //     facts: {duration: 300, delay: 0, easing: [0.8,0,0.2,1]},
-    //     title: {duration: 700, delay: 200, easing: [0.8,0,0.2,1]},
-    //     description: {duration: 900, delay: 400, easing: 'easeOutExpo'},
-    //     pagination: {duration: 300, delay: 400, easing: 'easeInOutQuad'},
-
-    //     menuCtrl: {duration: 300, easing: [0.2,1,0.3,1]},
-    //     menuItems: {duration: 300, easing: [0.2,1,0.3,1]},
-    //     factsCtrl: {duration: 300, easing: 'linear'},
-    //     gallery: {duration: 800, easing: [0.2,1,0.3,1]},
-    //     navigationCtrls: {duration: 800, easing: [0.8,0,0.2,1]},
-    //     previewCloseCtrl: {duration: 300, easing: 'easeOutExpo'},
-    //     factsItems: {duration: 800, easing: [0.8,0,0.2,1]},
-    //     expander: {duration: 800, easing: [0.8,0,0.2,1]}
-    // };
     const settings = {
-    image: {duration: 900, delay: 0, easing: 'cubicBezier(0.8, 0, 0.2, 1)'},
-    more: {duration: 900, delay: 0, easing: 'cubicBezier(0.8, 0, 0.2, 1)'},
-    facts: {duration: 300, delay: 0, easing: 'cubicBezier(0.8, 0, 0.2, 1)'},
-    title: {duration: 700, delay: 200, easing: 'cubicBezier(0.8, 0, 0.2, 1)'},
-    description: {duration: 900, delay: 400, easing: 'easeOutExpo'},
-    pagination: {duration: 300, delay: 400, easing: 'easeInOutQuad'},
+        image: { duration: 900, delay: 0, easing: 'cubicBezier(0.8, 0, 0.2, 1)' },
+        more: { duration: 900, delay: 0, easing: 'cubicBezier(0.8, 0, 0.2, 1)' },
+        facts: { duration: 300, delay: 0, easing: 'cubicBezier(0.8, 0, 0.2, 1)' },
+        title: { duration: 700, delay: 200, easing: 'cubicBezier(0.8, 0, 0.2, 1)' },
+        description: { duration: 900, delay: 400, easing: 'easeOutExpo' },
+        pagination: { duration: 300, delay: 400, easing: 'easeInOutQuad' },
 
-    menuCtrl: {duration: 300, easing: 'cubicBezier(0.2, 1, 0.3, 1)'},
-    menuItems: {duration: 300, easing: 'cubicBezier(0.2, 1, 0.3, 1)'},
-    factsCtrl: {duration: 300, easing: 'linear'},
-    gallery: {duration: 800, easing: 'cubicBezier(0.2, 1, 0.3, 1)'},
-    navigationCtrls: {duration: 800, easing: 'cubicBezier(0.8, 0, 0.2, 1)'},
-    previewCloseCtrl: {duration: 300, easing: 'easeOutExpo'},
-    factsItems: {duration: 800, easing: 'cubicBezier(0.8, 0, 0.2, 1)'},
-    expander: {duration: 800, easing: 'cubicBezier(0.8, 0, 0.2, 1)'}
-};
-    
+        menuCtrl: { duration: 300, easing: 'cubicBezier(0.2, 1, 0.3, 1)' },
+        menuItems: { duration: 300, easing: 'cubicBezier(0.2, 1, 0.3, 1)' },
+        factsCtrl: { duration: 300, easing: 'linear' },
+        gallery: { duration: 800, easing: 'cubicBezier(0.2, 1, 0.3, 1)' },
+        navigationCtrls: { duration: 800, easing: 'cubicBezier(0.8, 0, 0.2, 1)' },
+        previewCloseCtrl: { duration: 300, easing: 'easeOutExpo' },
+        factsItems: { duration: 800, easing: 'cubicBezier(0.8, 0, 0.2, 1)' },
+        expander: { duration: 800, easing: 'cubicBezier(0.8, 0, 0.2, 1)' },
+        scale: pageType == 'home' ? 0.64 : 0.55
+    };
+
     class Entry {
         constructor(el) {
             // this.DOM = {el: el};
@@ -65,8 +48,6 @@ export function initHome() {
             this.DOM.el = el;
             this.hasBoundEvents = false; // ✅ Add this
             this.init();
-            this.isMenuOpen = false; // ✅ Ensure initial state is defined
-            this.isMenuAnimating = false; // ✅ Also define animation guard
         }
         init() {
             // DOM elements:
@@ -97,12 +78,12 @@ export function initHome() {
             return this.toggle(direction);
         }
         toggle(direction) {
-            this.direction = direction; 
-            return Promise.all([this.toggleTitle(), 
-                                this.toggleDescription(),
-                                this.toggleImage(),
-                                this.toggleMore(),
-                                this.toggleFacts()]);
+            this.direction = direction;
+            return Promise.all([this.toggleTitle(),
+            this.toggleDescription(),
+            this.toggleImage(),
+            this.toggleMore(),
+            this.toggleFacts()]);
         }
         toggleTitle() {
             anime.remove(this.DOM.titleLetters);
@@ -111,7 +92,7 @@ export function initHome() {
                 duration: settings.title.duration,
                 delay: (target, index) => index * 30 + settings.title.delay,
                 easing: settings.title.easing,
-                translateY: this.isHidden ? [0,this.direction === 'next' ? '-100%' : '100%'] : [this.direction === 'next' ? '100%' : '-100%', 0],
+                translateY: this.isHidden ? [0, this.direction === 'next' ? '-100%' : '100%'] : [this.direction === 'next' ? '100%' : '-100%', 0],
                 opacity: {
                     value: this.isHidden ? 0 : 1,
                     duration: 1,
@@ -139,8 +120,8 @@ export function initHome() {
                 duration: settings.image.duration,
                 delay: settings.image.delay,
                 easing: settings.image.easing,
-                translateY: this.isHidden ? ['0%',this.direction === 'next' ? '-100%' : '100%'] : [this.direction === 'next' ? '100%' : '-100%','0%'],
-                scale: !this.isHidden ? [1.8,1] : 1,
+                translateY: this.isHidden ? ['0%', this.direction === 'next' ? '-100%' : '100%'] : [this.direction === 'next' ? '100%' : '-100%', '0%'],
+                scale: !this.isHidden ? [1.8, 1] : 1,
                 opacity: {
                     value: this.isHidden ? 0 : 1,
                     duration: 1,
@@ -155,13 +136,13 @@ export function initHome() {
                 duration: settings.more.duration,
                 delay: settings.more.delay,
                 easing: settings.more.easing,
-                translateY: this.isHidden ? ['0%',this.direction === 'next' ? '-100%' : '100%'] : [this.direction === 'next' ? '100%' : '-100%','0%'],
+                translateY: this.isHidden ? ['0%', this.direction === 'next' ? '-100%' : '100%'] : [this.direction === 'next' ? '100%' : '-100%', '0%'],
                 opacity: {
                     value: this.isHidden ? 0 : 1,
-                    duration: (target, index) => index ? settings.more.duration/3 : 1,
-                    delay: (target, index) => index ? 
-                                                this.isHidden ? 100 : settings.more.duration * 0.5 + settings.more.delay :
-                                                this.isHidden ? settings.more.duration + settings.more.delay : settings.more.delay
+                    duration: (target, index) => index ? settings.more.duration / 3 : 1,
+                    delay: (target, index) => index ?
+                        this.isHidden ? 100 : settings.more.duration * 0.5 + settings.more.delay :
+                        this.isHidden ? settings.more.duration + settings.more.delay : settings.more.delay
                 }
             }).finished;
         }
@@ -174,7 +155,7 @@ export function initHome() {
                     return !this.isHidden ? index * 40 + settings.facts.duration * 0.5 + settings.facts.delay : index * 40 + settings.facts.delay;
                 },
                 easing: settings.facts.easing,
-                translateY: this.isHidden ? [this.DOM.facts.ty, this.direction === 'next' ? this.DOM.facts.ty-20 : this.DOM.facts.ty+20] : [this.direction === 'next' ? this.DOM.facts.ty+20 : this.DOM.facts.ty-20, this.DOM.facts.ty],
+                translateY: this.isHidden ? [this.DOM.facts.ty, this.direction === 'next' ? this.DOM.facts.ty - 20 : this.DOM.facts.ty + 20] : [this.direction === 'next' ? this.DOM.facts.ty + 20 : this.DOM.facts.ty - 20, this.DOM.facts.ty],
                 opacity: this.isHidden ? 0 : 1
             }).finished;
         }
@@ -189,15 +170,6 @@ export function initHome() {
         init() {
             // DOM elements.
             this.DOM.menuCtrl = this.DOM.el.querySelector('.sections__header > button.button-menu');
-            this.DOM.menu = {
-                wrapper: this.DOM.el.querySelector('.menu'),
-                items: Array.from(this.DOM.el.querySelectorAll('.menu > .menu__inner > .menu__item')),
-                menuCtrls: {
-                    toggle: this.DOM.el.querySelector('.menu > .menu__toggle'),
-                    open: this.DOM.el.querySelector('.menu > .menu__toggle > .menu__toggle-inner--open'),
-                    close: this.DOM.el.querySelector('.menu > .menu__toggle > .menu__toggle-inner--close')
-                }
-            };
             this.DOM.factsContainer = this.DOM.el.querySelector('.facts');
             this.DOM.factsCtrls = {
                 toggle: this.DOM.factsContainer.querySelector('.facts__toggle'),
@@ -223,21 +195,21 @@ export function initHome() {
             const factHeight = factEl.getBoundingClientRect().height + parseFloat(window.getComputedStyle(factEl).marginBottom);
             const paddingFactsStyle = window.getComputedStyle(this.currentEntry.DOM.facts.wrapper);
             const paddingFacts = parseFloat(paddingFactsStyle.paddingTop) + parseFloat(paddingFactsStyle.paddingBottom);
-            
-            this.factsTranslation = win.height - 2 * factHeight - paddingFacts;
-            for ( let i = 0; i <= this.entriesTotal - 1; ++i ) {
+
+            this.factsTranslation = pageType == 'home' ? win.height - 2 * factHeight - paddingFacts : '467';
+            for (let i = 0; i <= this.entriesTotal - 1; ++i) {
                 const entry = this.DOM.entries[i];
-                // entry.DOM.expander.style.transform = `scale3d(0.64,1,1) translate3d(0px,${this.factsTranslation}px,0px)`;
-                entry.DOM.expander.style.transform = `translateY(${this.factsTranslation}px) scaleX(0.64)`;
-                for ( let j = 0, len = entry.DOM.facts.items.length; j <= len - 1; ++j ) {
+                // entry.DOM.expander.style.transform = `scale3d(${settings.scale},1,1) translate3d(0px,${this.factsTranslation}px,0px)`;
+                entry.DOM.expander.style.transform = `translateY(${this.factsTranslation}px) scaleX(${settings.scale})`;
+                for (let j = 0, len = entry.DOM.facts.items.length; j <= len - 1; ++j) {
                     entry.DOM.facts.ty = this.factsTranslation;
                     const item = entry.DOM.facts.items[j];
                     // item.style.transform = `translate3d(0px,${this.factsTranslation}px,0px)`;
                     item.style.transform = `translateY(${this.factsTranslation}px)`;
-                    if ( j > 1 ) {
+                    if (j > 1) {
                         item.style.opacity = 0;
                     }
-                    else if ( i === this.currentPos ){
+                    else if (i === this.currentPos) {
                         item.style.opacity = 1;
                     }
                 }
@@ -251,39 +223,36 @@ export function initHome() {
             this.onNextClick = () => this.navigate('next');
             this.DOM.navigation.prevCtrl.addEventListener('click', this.onPrevClick);
             this.DOM.navigation.nextCtrl.addEventListener('click', this.onNextClick);
-            
-            // Main menu
-            this.DOM.menu.menuCtrls.toggle.addEventListener('click', () => this.toggleMenu());
-            
+
             // Facts Container
             this.DOM.factsCtrls.toggle.addEventListener('click', () => this.toggleFactsContainer());
-            
+
             // Facts (clickable facts)
-            for ( let i = 0; i <= this.entriesTotal - 1; ++i ) {
+            for (let i = 0; i <= this.entriesTotal - 1; ++i) {
                 const entry = this.DOM.entries[i];
                 entry.DOM.facts.items
-                     .filter(fact => fact.classList.contains('section__facts-item--clickable'))
-                     .forEach(clickableFact => clickableFact.addEventListener('click', () => this.preview(clickableFact.dataset.gallery)));
+                    .filter(fact => fact.classList.contains('section__facts-item--clickable'))
+                    .forEach(clickableFact => clickableFact.addEventListener('click', () => this.preview(clickableFact.dataset.gallery)));
             }
-            
+
             // Close preview
             this.DOM.previewCloseCtrl.addEventListener('click', () => this.closePreview());
-            
+
             // Window resize
             this.onResize = () => {
-                win = {width: window.innerWidth, height: window.innerHeight};
+                win = { width: window.innerWidth, height: window.innerHeight };
                 this.layout();
-                if ( this.isFactsOpen ) {
+                if (this.isFactsOpen) {
                     // Toggle the factsCtrls state
                     this.DOM.factsCtrls.more.style.opacity = 1;
                     this.DOM.factsCtrls.less.style.opacity = 0;
                     this.isFactsOpen = !this.isFactsOpen;
-                    this.toggleNavigationCtrls({opacity: 1, duration: 1});
+                    this.toggleNavigationCtrls({ opacity: 1, duration: 1 });
                     this.isFactsAnimating = false;
                 }
-                if ( this.gallery ) {
+                if (this.gallery) {
                     this.DOM.previewCloseCtrl.style.opacity = 0;
-                    this.toggleGallery(this.gallery, {duration: 1,opacity: 0}).then(() => this.gallery = null);
+                    this.toggleGallery(this.gallery, { duration: 1, opacity: 0 }).then(() => this.gallery = null);
                 }
                 this.DOM.el.classList.remove('sections--factsopen');
             };
@@ -291,13 +260,13 @@ export function initHome() {
             window.addEventListener('resize', debounce(() => this.onResize(), 20));
         }
         navigate(direction) {
-            if ( this.isEntriesAnimating || this.isFactsAnimating ) return;
+            if (this.isEntriesAnimating || this.isFactsAnimating) return;
             this.isEntriesAnimating = true;
             // Store direction
             this.direction = direction;
             // Update currentPos
-            const newPos = this.currentPos = this.direction === 'next' ? 
-                this.currentPos < this.entriesTotal - 1 ? this.currentPos + 1 : 0 : 
+            const newPos = this.currentPos = this.direction === 'next' ?
+                this.currentPos < this.entriesTotal - 1 ? this.currentPos + 1 : 0 :
                 this.currentPos = this.currentPos > 0 ? this.currentPos - 1 : this.entriesTotal - 1;
 
             const newEntry = this.DOM.entries[newPos];
@@ -316,7 +285,7 @@ export function initHome() {
                 });
             };
 
-            if ( this.isFactsOpen ) {
+            if (this.isFactsOpen) {
                 this.toggleFactsContainer().then(updateFn);
             }
             else {
@@ -331,65 +300,22 @@ export function initHome() {
                 duration: settings.pagination.duration,
                 easing: 'easeInOutQuad',
                 translateY: [
-                    {value: this.direction === 'next' ? '-100%' : '100%', delay: settings.pagination.delay},
-                    {value: [this.direction === 'next' ? '100%' : '-100%','0%'], delay: settings.pagination.duration}
+                    { value: this.direction === 'next' ? '-100%' : '100%', delay: settings.pagination.delay },
+                    { value: [this.direction === 'next' ? '100%' : '-100%', '0%'], delay: settings.pagination.duration }
                 ],
                 opacity: [
-                    {value: 0, delay: settings.pagination.delay},
-                    {value: [0,1], delay: settings.pagination.duration}
+                    { value: 0, delay: settings.pagination.delay },
+                    { value: [0, 1], delay: settings.pagination.duration }
                 ],
                 update: (anime) => {
-                    if ( anime.progress >= 50 && !halfway ) {
+                    if (anime.progress >= 50 && !halfway) {
                         halfway = true;
                         this.DOM.pagination.innerHTML = `0${this.currentPos + 1}`;
                     }
                 }
             }).finished;
         }
-        toggleMenu() {
-  console.log('toggleMenu called', this.isMenuOpen);
-
-  if (this.isMenuAnimating) return;
-  this.isMenuAnimating = true;
-
-  const toggleMenuCtrlFn = () => {
-    anime.remove([this.DOM.menu.menuCtrls.open, this.DOM.menu.menuCtrls.close]);
-    return anime({
-      targets: [this.DOM.menu.menuCtrls.open, this.DOM.menu.menuCtrls.close],
-      duration: settings.menuCtrl.duration,
-      easing: settings.menuCtrl.easing,
-      opacity: (target, index) => index ? !this.isMenuOpen ? 1 : 0 : !this.isMenuOpen ? 0 : 1,
-      translateX: (target, index) =>
-        index ? (!this.isMenuOpen ? ['50%', '0%'] : '50%') : (!this.isMenuOpen ? ['0%', '-50%'] : '0%'),
-    }).finished;
-  };
-
-  const toggleMenuItemsFn = () => {
-    anime.remove(this.DOM.menu.items);
-    return anime({
-      targets: this.DOM.menu.items,
-      duration: settings.menuItems.duration,
-      easing: settings.menuItems.easing,
-      delay: (target, index) => !this.isMenuOpen ? index * 80 : 0,
-      translateX: !this.isMenuOpen ? ['5%', '0%'] : '0%',
-      opacity: {
-        value: !this.isMenuOpen ? [0, 1] : 0,
-        easing: 'linear',
-        delay: (target, index) => !this.isMenuOpen ? index * 80 : 0,
-      }
-    }).finished;
-  };
-
-  // Toggle class only after isMenuOpen has been flipped
-  const willBeOpen = !this.isMenuOpen;
-  this.DOM.menu.wrapper.classList.toggle('menu--open', willBeOpen);
-
-  Promise.all([toggleMenuCtrlFn(), toggleMenuItemsFn()]).then(() => {
-    this.isMenuOpen = willBeOpen; // ✅ Update state AFTER animation
-    this.isMenuAnimating = false;
-    console.log('Menu toggled. Now open?', this.isMenuOpen);
-  });
-}
+      
         toggleFactsContainer() {
             if (this.isFactsAnimating || (this.isEntriesAnimating && !this.isFactsOpen)) {
                 return;
@@ -413,7 +339,7 @@ export function initHome() {
             });
         }
         preview(gallery) {
-            if ( this.isFactsAnimating || !gallery ) return;
+            if (this.isFactsAnimating || !gallery) return;
             this.isFactsAnimating = true;
 
             this.gallery = gallery;
@@ -441,13 +367,13 @@ export function initHome() {
                 }),
                 this.toggleGallery(gallery, {
                     opacity: 1,
-                    scale: (target, index) => index ? [0.7,1] : [1,1], // just the images..
+                    scale: (target, index) => index ? [0.7, 1] : [1, 1], // just the images..
                     delay: (target, index) => index ? index * 100 + 700 : 700 // just the images..
                 })
             ]).then(() => this.isFactsAnimating = false);
         }
         closePreview() {
-            if ( this.isFactsAnimating ) return;
+            if (this.isFactsAnimating) return;
             this.isFactsAnimating = true;
 
             Promise.all([
@@ -460,7 +386,7 @@ export function initHome() {
                 }),
                 this.animateExpander({
                     translateY: 0,
-                    scaleX: 0.64
+                    scaleX: settings.scale
                 }),
                 this.animateFactsItems({
                     translateY: 0,
@@ -486,7 +412,7 @@ export function initHome() {
                 easing: settings.expander.easing,
                 delay: !this.isFactsOpen ? 0 : 300,
                 translateY: !this.isFactsOpen ? [this.factsTranslation, 0] : this.factsTranslation,
-                scaleX: [0.64,0.64]
+                scaleX: [settings.scale, settings.scale]
             }, animeconfig));
         }
         animateFactsItems(animeconfig) {
@@ -494,8 +420,8 @@ export function initHome() {
                 targets: this.currentEntry.DOM.facts.items,
                 duration: settings.factsItems.duration,
                 easing: settings.factsItems.easing,
-                delay: (target, index, total) => !this.isFactsOpen ? (index+1) * 30 + 150 : (total-index-1) * 30,
-                translateY: !this.isFactsOpen ? [this.factsTranslation,0] : this.factsTranslation,
+                delay: (target, index, total) => !this.isFactsOpen ? (index + 1) * 30 + 150 : (total - index - 1) * 30,
+                translateY: !this.isFactsOpen ? [this.factsTranslation, 0] : this.factsTranslation,
                 opacity: (target, index) => !this.isFactsOpen ? 1 : index > 1 ? 0 : 1
             }, animeconfig));
         }
@@ -536,8 +462,11 @@ export function initHome() {
 
     // Preload all the images in the page..
     imagesLoaded(document.querySelectorAll('img'), () => {
-        document.body.classList.remove('loading');
-        // Init
-        new Slideshow(document.querySelector('.sections'));
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                document.body.classList.remove('loading');
+                new Slideshow(document.querySelector('.sections'));
+            });
+        });
     });
 };

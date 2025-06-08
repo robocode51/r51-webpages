@@ -1,46 +1,19 @@
 "use client"; // Required for components with event handlers or client-side hooks/scripts
 import { useEffect } from 'react';
-import Image from 'next/image'; // For Next.js optimized images
-import { initHome } from '@/app/utils/home';
+import { initHome } from '@/utils/home';
+import Link from 'next/link';
 
 export default function HomePage() {
   useEffect(() => {
+    if (typeof window !== 'undefined') {
       initHome();
+    }
   }, []);
 
   return (
     <>
       <main>
         <div className="sections">
-          <header className="sections__header">
-            <h1 className="title">
-              {/* Use Next/Image for optimized image loading */}
-              <Image 
-                src="/img/logoRC51.png" 
-                alt="RoboCode Ventures Logo" 
-                width={180} // Provide appropriate width
-                height={60} // Provide appropriate height
-                style={{ width: 'auto', height: '60px' }} // Maintain original styling if needed
-                priority // If it's LCP
-              />
-            </h1>
-          </header>
-          <nav className="menu">
-            <ul className="menu__inner">
-              <li className="menu__item"><a className="menu__item-link" href="#">Home</a></li>
-              <li className="menu__item"><a className="menu__item-link" href="#">Portfolio</a></li>
-              <li className="menu__item"><a className="menu__item-link" href="#">Team</a></li>
-              <li className="menu__item"><a className="menu__item-link" href="#">Contact Us</a></li>
-            </ul>
-            <div className="menu__toggle">
-              <span className="menu__toggle-inner menu__toggle-inner--open">
-                <svg className="icon icon--menu"><use xlinkHref="#icon-menu"></use></svg>
-              </span>
-              <span className="menu__toggle-inner menu__toggle-inner--close">
-                <svg className="icon icon--close"><use xlinkHref="#icon-close"></use></svg>
-              </span>
-            </div>
-          </nav>
           <div className="facts">
             <div className="facts__toggle">
               <span className="facts__toggle-inner facts__toggle-inner--more">
@@ -83,10 +56,10 @@ export default function HomePage() {
             <div className="section__more">
               <div className="section__more-inner section__more-inner--bg1">
                 <span className="section__more-text">Want to know more?</span>
-                <a href="#" className="section__more-link">
+                <Link href="/portfolio" className="section__more-link">
                   <span className="section__more-linktext">Explore projects</span>
                   <svg className="icon icon--arrowlong"><use xlinkHref="#icon-arrowlong"></use></svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="section__expander"></div>

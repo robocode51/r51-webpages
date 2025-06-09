@@ -26,8 +26,9 @@ export default function RootLayout({
   children,
 }) {
   return (
-    <html lang="en" className="no-js">
+    <html lang="en" className="">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"></meta>
         {/* CSS Variable support check script */}
         <Script id="css-vars-check" strategy="beforeInteractive">
           {`
@@ -81,7 +82,7 @@ export default function RootLayout({
           </symbol>
         </svg>
         <header className="sections__header">
-          <Link href="/" className="title">
+          <a href="/" className="title">
             <Image
               src="/img/logoRC51.png"
               alt="RoboCode Ventures Logo"
@@ -90,7 +91,7 @@ export default function RootLayout({
               style={{ width: 'auto', height: '60px' }}
               priority
             />
-          </Link>
+          </a>
           <MenuClientWrapper />
         </header>
         {children}

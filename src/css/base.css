@@ -19,6 +19,7 @@ body {
 	--color-bg-link-box: #7c7c7c;
 	--color-text-facts: #fff;
 	--color-bg-img: #000;
+	--color-bg-more: #e2d9c7;
 	--color-bg-more-1: #fee9b1;
 	--color-bg-more-2: #e0f3ca;
 	--color-bg-more-3: #f3cae8;
@@ -34,9 +35,9 @@ body {
 
 /* Page Loader */
 body.loading * {
-  animation: none !important;
-  transition: none !important;
-  opacity: 0 !important;
+	animation: none !important;
+	transition: none !important;
+	opacity: 0 !important;
 }
 
 .js .loading::before {
@@ -91,7 +92,7 @@ body.loading * {
 		fill: var(--cursor-fill);
 		stroke: var(--cursor-stroke);
 		stroke-width: var(--cursor-stroke-width);
-		opacity: 0.6;
+		opacity: 0.6 !important;
 	}
 
 	.no-js .cursor {
@@ -118,6 +119,7 @@ a:focus {
 	width: 0;
 	height: 0;
 	pointer-events: none;
+	display: none !important;
 }
 
 button {
@@ -151,7 +153,8 @@ button:focus {
 	padding: 2rem 0rem;
 	display: flex;
 	position: absolute;
-    width: 100%;
+	width: 100%;
+	z-index: 999;
 }
 
 .title {
@@ -310,9 +313,10 @@ button:focus {
 .section__facts-item {
 	margin: 0 0 2.5rem 0;
 }
+
 .contact .section__facts-item {
 	text-align: center;
-	margin:0;
+	margin: 0;
 }
 
 .section__facts-img {
@@ -364,6 +368,7 @@ button:focus {
 	text-transform: uppercase;
 	font-weight: bold;
 }
+
 .normalcase {
 	text-transform: none;
 }
@@ -433,7 +438,7 @@ button:focus {
 }
 
 .section__more-inner--bg1 {
-	background-color: var(--color-bg-more-1);
+	background-color: var(--color-bg-more);
 }
 
 .section__more-inner--bg2 {
@@ -482,9 +487,15 @@ button:focus {
 			"... expander"
 			"sections-nav expander";
 	}
+
 	/* .sections.sections-contact {
 		grid-template-columns: 55% 45%;
 	} */
+	/* .sections__header {
+		background-color: #fff;
+		margin-bottom: 129px;
+	} */
+
 	.menu {
 		grid-template-columns: 47% 53%;
 	}
@@ -595,8 +606,8 @@ button:focus {
 
 	.sections__nav {
 		display: flex;
-        flex-direction: row;
-        gap: 4px;
+		flex-direction: row;
+		gap: 4px;
 		grid-area: sections-nav;
 		z-index: 5;
 		padding: 2rem 4rem 0;
@@ -631,9 +642,11 @@ button:focus {
 			"slide-content slide-image slide-image"
 			"... ... more";
 	}
+
 	.section.section-contact {
 		grid-template-columns: 47% 28% 27%;
 	}
+
 	.section--current {
 		pointer-events: auto;
 	}
@@ -784,4 +797,6 @@ screen and (max-height: 39.9em) {
 		opacity: 1 !important;
 		transform: none !important;
 	}
+
+
 }

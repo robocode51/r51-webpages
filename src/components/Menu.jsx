@@ -41,7 +41,7 @@ export default function MenuClientWrapper() {
       <nav className="menu">
         <ul className="menu__inner">
           <li className="menu__item"><a className="menu__item-link" href="/">Home</a></li>
-          <li className="menu__item"><Link className="menu__item-link" href="/portfolio">Portfolio</Link></li>
+          <li className="menu__item"><a className="menu__item-link" href="/portfolio">Portfolio</a></li>
           {/* <li className="menu__item"><a className="menu__item-link" href="#">Team</a></li> */}
           <li className="menu__item"><a className="menu__item-link" href="/contact">Contact Us</a></li>
         </ul>

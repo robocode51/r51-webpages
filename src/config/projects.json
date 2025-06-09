@@ -1,0 +1,37 @@
+[
+  {
+    "project_title": "Knowledge Assistant",
+    "project_image": "/img/portfolio/KA.jpg",
+    "description": "AI-driven assistant for knowledge retrieval and automation.",
+    "domains": ["Manufacturing", "Health<br/>care", "Legal", "Education"],
+    "capabilities": ["AI Solutions"]
+  },
+  {
+    "project_title": "ERP",
+    "project_image": "/img/portfolio/ERP.jpg",
+    "description": "End-to-end enterprise resource planning system.",
+    "domains": ["Manufacturing", "Healthcare", "Legal", "Education"],
+    "capabilities": ["SAAS"]
+  },
+  {
+    "project_title": "VMM",
+    "project_image": "/img/portfolio/Section1.jpg",
+    "description": "Visual Manufacturing Monitor for real-time factory insights.",
+    "domains": ["Manufacturing"],
+    "capabilities": ["AI Solutions"]
+  },
+  {
+    "project_title": "1Health",
+    "project_image": "/img/portfolio/KA.jpg",
+    "description": "Healthcare automation platform",
+    "domains": ["Healthcare"],
+    "capabilities": ["SAAS"]
+  },
+  {
+    "project_title": "W Digital",
+    "project_image": "/img/portfolio/KA.jpg",
+    "description": "Digital Marketing Agency",
+    "domains": ["Marketing"],
+    "capabilities": ["SAAS"]
+  }
+]

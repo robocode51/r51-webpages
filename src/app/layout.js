@@ -81,7 +81,7 @@ export default function RootLayout({
           </symbol>
         </svg>
         <header className="sections__header">
-          <Link href="/" className="title">
+          <a href="/" className="title">
             <Image
               src="/img/logoRC51.png"
               alt="RoboCode Ventures Logo"
@@ -90,7 +90,7 @@ export default function RootLayout({
               style={{ width: 'auto', height: '60px' }}
               priority
             />
-          </Link>
+          </a>
           <MenuClientWrapper />
         </header>
         {children}

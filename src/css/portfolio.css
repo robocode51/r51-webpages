@@ -74,7 +74,7 @@
 .gallery__item-link {
 	grid-area: gallery-link;
 	align-self: end;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	background: var(--color-gallery-link-bg);
 	color: var(--color-gallery-link);
 	width: 120px;
@@ -87,7 +87,14 @@
 	cursor: pointer;
 	font-weight: 500;
 }
-
+.icon--arrowlong {
+	width: 4rem;
+	height: 1.25rem;
+    margin: 0 0 1rem 0;
+}
+.menu__toggle {
+    right: 0;
+}
 .gallery__item-link:focus,
 .gallery__item-link:hover {
 	background: var(--color-gallery-link-bg-hover);

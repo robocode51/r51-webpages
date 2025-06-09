@@ -1,0 +1,43 @@
+.project-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+  transition: opacity 0.3s;
+  overflow: hidden;
+  clip-path: circle(0% at center);
+}
+
+.project-overlay .overlay-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 2rem;
+    font-weight: 500;
+    gap: 20px; 
+    line-height: 24px;
+}
+
+.close-overlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 99999;
+}
+
+.overlay-text {
+  flex: 1;
+}
+
+.overlay-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

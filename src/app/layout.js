@@ -26,7 +26,7 @@ export default function RootLayout({
   children,
 }) {
   return (
-    <html lang="en" className="no-js">
+    <html lang="en" className="">
       <head>
         {/* CSS Variable support check script */}
         <Script id="css-vars-check" strategy="beforeInteractive">

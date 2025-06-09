@@ -92,7 +92,7 @@ body.loading * {
 		fill: var(--cursor-fill);
 		stroke: var(--cursor-stroke);
 		stroke-width: var(--cursor-stroke-width);
-		opacity: 0.6;
+		opacity: 0.6!important;
 	}
 
 	.no-js .cursor {

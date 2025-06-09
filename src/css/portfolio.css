@@ -32,7 +32,7 @@
     background-position: 50% 0;
     width: 100%;
     height: 100%;
-	border-radius: 10px;
+	border-radius: 8px;
 }
 
 .gallery__item-caption {
@@ -92,9 +92,10 @@
 	height: 1.25rem;
     margin: 0 0 1rem 0;
 }
-.menu__toggle {
+/* .menu__toggle {
     right: 0;
-}
+} */
+
 .gallery__item-link:focus,
 .gallery__item-link:hover {
 	background: var(--color-gallery-link-bg-hover);

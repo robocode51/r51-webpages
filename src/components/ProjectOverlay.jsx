@@ -21,10 +21,16 @@ export default function ProjectOverlay({ isOpen, onClose, title, description, im
     });
 
     // Animate circle expand
+    // gsap.to(overlay, {
+    //   clipPath: `circle(150% at ${x}px ${y}px)`,
+    //   duration: 2, // previously 0.6
+    //   ease: 'power3.out', // smoother easing
+    // });
+
     gsap.to(overlay, {
-      clipPath: `circle(150% at ${x}px ${y}px)`,
-      duration: 2, // previously 0.6
-      ease: 'power3.out', // smoother easing
+      clipPath: `circle(200% at ${x}px ${y}px)`,
+      duration: 2,
+      ease: 'power3.out',
     });
 
     // Optional: Fade in content after expansion

@@ -33,7 +33,7 @@ export default function HomePage() {
             <span className="sections__index-current">
               <span className="sections__index-inner">01</span>
             </span>
-            <span className="sections__index-total">07</span>
+            <span className="sections__index-total">05</span>
           </div>
           <nav className="sections__nav">
             <button className="sections__nav-item sections__nav-item--prev">
@@ -53,15 +53,15 @@ export default function HomePage() {
             <div className="section__img">
               <div className="section__img-inner" style={{backgroundImage: 'url(/img/ai.webp)'}}></div>
             </div>
-            <div className="section__more">
+            <Link href="/portfolio" className="section__more">
               <div className="section__more-inner section__more-inner--bg1">
                 <span className="section__more-text">Want to know more?</span>
-                <Link href="/portfolio" className="section__more-link">
+                <span className="section__more-link">
                   <span className="section__more-linktext">Explore projects</span>
                   <svg className="icon icon--arrowlong"><use xlinkHref="#icon-arrowlong"></use></svg>
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
             <div className="section__expander"></div>
             
             <ul className="section__facts">
@@ -101,47 +101,43 @@ export default function HomePage() {
             <div className="section__img">
               <div className="section__img-inner" style={{backgroundImage: 'url(/img/roboticarm.jpg)'}}></div>
             </div>
-            <div className="section__more">
-              <div className="section__more-inner section__more-inner--bg2">
+            <Link href="/portfolio" className="section__more">
+              <div className="section__more-inner section__more-inner--bg1">
                 <span className="section__more-text">Want to know more?</span>
-                <a href="#" className="section__more-link">
+                <span className="section__more-link">
                   <span className="section__more-linktext">Explore projects</span>
                   <svg className="icon icon--arrowlong"><use xlinkHref="#icon-arrowlong"></use></svg>
-                </a>
+                </span>
               </div>
-            </div>
+            </Link>
             <div className="section__expander"></div>
+            
             <ul className="section__facts">
               <li className="section__facts-item">
-                <h3 className="section__facts-title">Legal</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet</span>
+                <h3 className="section__facts-title">Manufacturing</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               </li>
               <li className="section__facts-item">
                 <h3 className="section__facts-title">Healthcare</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet</span>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               </li>
               <li className="section__facts-item">
-                <h3 className="section__facts-title">Manufacturing</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet</span>
+                <h3 className="section__facts-title">Legal</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               </li>
-              <li className="section__facts-item section__facts-item--clickable" data-gallery="gallery2">
-                <div className="section__facts-img">
-                  <img src="/img/thumb2.jpg" alt="Some image"/> {/* Consider Next/Image here too */}
-                  <svg className="icon icon--grid"><use xlinkHref="#icon-grid"></use></svg>
-                </div>
-                <h3 className="section__facts-title">Our best projects</h3>
-                <span className="section__facts-detail">A collection of Projects</span>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Fintech</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">EdTech</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Heritage</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               </li>
             </ul>
-            <div className="section__gallery" id="gallery2">
-              <h3 className="section__gallery-item section__gallery-item--title">Our best projects</h3>
-              <a className="section__gallery-item" href="#"><img src="/img/thumb5.jpg" alt="Some image"/></a>
-              <a className="section__gallery-item" href="#"><img src="/img/thumb6.jpg" alt="Some image"/></a>
-              <a className="section__gallery-item" href="#"><img src="/img/thumb1.jpg" alt="Some image"/></a>
-              <a className="section__gallery-item" href="#"><img src="/img/thumb2.jpg" alt="Some image"/></a>
-              <a className="section__gallery-item" href="#"><img src="/img/thumb3.jpg" alt="Some image"/></a>
-              <a className="section__gallery-item" href="#"><img src="/img/thumb4.jpg" alt="Some image"/></a>
-            </div>
           </section>
 
           {/* Section 3: SAAS */}
@@ -153,46 +149,138 @@ export default function HomePage() {
             <div className="section__img">
               <div className="section__img-inner" style={{backgroundImage: 'url(/img/saas.webp)'}}></div>
             </div>
-            <div className="section__more">
-              <div className="section__more-inner section__more-inner--bg3">
+            <Link href="/portfolio" className="section__more">
+              <div className="section__more-inner section__more-inner--bg1">
                 <span className="section__more-text">Want to know more?</span>
-                <a href="#" className="section__more-link">
+                <span className="section__more-link">
                   <span className="section__more-linktext">Explore projects</span>
                   <svg className="icon icon--arrowlong"><use xlinkHref="#icon-arrowlong"></use></svg>
-                </a>
+                </span>
               </div>
-            </div>
+            </Link>
             <div className="section__expander"></div>
+            
             <ul className="section__facts">
-              <li className="section__facts-item"><h3 className="section__facts-title">Legal</h3><span className="section__facts-detail">Lorem ipsum dolor sit amet</span></li>
-              <li className="section__facts-item"><h3 className="section__facts-title">Healthcare</h3><span className="section__facts-detail">Lorem ipsum dolor sit amet</span></li>
-              <li className="section__facts-item"><h3 className="section__facts-title">Manufacturing</h3><span className="section__facts-detail">Lorem ipsum dolor sit amet</span></li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Manufacturing</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Healthcare</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Legal</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Fintech</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">EdTech</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Heritage</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
             </ul>
           </section>
 
-          {/* Section 4: IOT */}
+          {/* Section 4: Branding */}
           <section className="section">
             <div className="section__content">
-              <h2 className="section__title">IOT</h2>
+              <h2 className="section__title">Branding</h2>
+              <p className="section__description"><span className="section__description-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
+            </div>
+            <div className="section__img">
+              <div className="section__img-inner" style={{backgroundImage: 'url(/img/branding.jpg)'}}></div> {/* Assuming this is a placeholder and should be a unique IOT image */}
+            </div>
+                       <Link href="/portfolio" className="section__more">
+              <div className="section__more-inner section__more-inner--bg1">
+                <span className="section__more-text">Want to know more?</span>
+                <span className="section__more-link">
+                  <span className="section__more-linktext">Explore projects</span>
+                  <svg className="icon icon--arrowlong"><use xlinkHref="#icon-arrowlong"></use></svg>
+                </span>
+              </div>
+            </Link>
+            <div className="section__expander"></div>
+            
+            <ul className="section__facts">
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Manufacturing</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Healthcare</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Legal</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Fintech</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">EdTech</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Heritage</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+            </ul>
+          </section>
+
+            {/* Section 5: HealthCare */}
+          <section className="section">
+            <div className="section__content">
+              <h2 className="section__title">HealthCare</h2>
               <p className="section__description"><span className="section__description-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
             </div>
             <div className="section__img">
               <div className="section__img-inner" style={{backgroundImage: 'url(/img/ai.webp)'}}></div> {/* Assuming this is a placeholder and should be a unique IOT image */}
             </div>
-            <div className="section__more">
-              <div className="section__more-inner section__more-inner--bg4">
+                       <Link href="/portfolio" className="section__more">
+              <div className="section__more-inner section__more-inner--bg1">
                 <span className="section__more-text">Want to know more?</span>
-                <a href="#" className="section__more-link">
+                <span className="section__more-link">
                   <span className="section__more-linktext">Explore projects</span>
                   <svg className="icon icon--arrowlong"><use xlinkHref="#icon-arrowlong"></use></svg>
-                </a>
+                </span>
               </div>
-            </div>
+            </Link>
             <div className="section__expander"></div>
+            
             <ul className="section__facts">
-              <li className="section__facts-item"><h3 className="section__facts-title">Legal</h3><span className="section__facts-detail">Lorem ipsum dolor sit amet</span></li>
-              <li className="section__facts-item"><h3 className="section__facts-title">Healthcare</h3><span className="section__facts-detail">Lorem ipsum dolor sit amet</span></li>
-              <li className="section__facts-item"><h3 className="section__facts-title">Manufacturing</h3><span className="section__facts-detail">Lorem ipsum dolor sit amet</span></li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Manufacturing</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Healthcare</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Legal</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Fintech</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">EdTech</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
+              <li className="section__facts-item">
+                <h3 className="section__facts-title">Heritage</h3>
+                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+              </li>
             </ul>
           </section>
         </div>

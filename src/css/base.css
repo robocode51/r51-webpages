@@ -12,20 +12,21 @@ body {
 	/* Colors */
 	--color-text: #000;
 	--color-bg-main: #fff;
+	--color-bg-secondary: #5fb6fe;
 	--color-menu-item: #fff;
 	--color-menu-item-hover: #5fb6fe;
 	--color-bg-menu: #cbf3ee;
-	--color-bg-facts: #5fb6fe;
+	--color-bg-facts: #e2d9c7;
 	--color-bg-link-box: #7c7c7c;
-	--color-text-facts: #fff;
+	--color-text-facts: #000;
 	--color-bg-img: #000;
-	--color-bg-more: #e2d9c7;
+	--color-bg-more: #5fb6fe;
 	--color-bg-more-1: #fee9b1;
 	--color-bg-more-2: #e0f3ca;
 	--color-bg-more-3: #f3cae8;
 	--color-bg-more-4: #cacaf3;
 	--color-nav: #ddd;
-	--color-nav-hover: #000;
+	--color-nav-hover: #7c7c7c;
 	--color-link: #000;
 	--color-link-hover: #333;
 	--cursor-stroke: none;
@@ -423,7 +424,9 @@ button:focus {
 	align-items: stretch;
 	overflow: hidden;
 }
-
+.section__more-inner:hover {
+	background-color: var(--color-nav-hover);
+}
 .section__more-inner {
 	display: flex;
 	width: 100%;
@@ -457,12 +460,14 @@ button:focus {
 	font-weight: bold;
 	display: block;
 	margin: 0 0 1rem 0;
+	color: #fff;
 }
 
 .section__more-link {
 	display: flex;
 	cursor: pointer;
 	font-weight: 300;
+	color: #fff;
 }
 
 .section__more-linktext {
@@ -473,6 +478,15 @@ button:focus {
 .icon--arrowlong {
 	width: 2rem;
 	height: 1.25rem;
+}
+
+@media screen and (max-width: 879px) {
+	main {
+		padding-top: 100px;
+	}
+	.sections__header {
+		background-color: #fff;
+	}
 }
 
 @media screen and (min-width: 55em) and (min-height: 40em) {
@@ -615,21 +629,21 @@ button:focus {
 	}
 
 	.sections__nav-item {
-		border: 2px solid var(--color-nav);
+		/* border: 2px solid var(--color-nav); */
 		border-radius: 50%;
 		width: 3rem;
 		height: 3rem;
-		background: var(--color-bg-main);
+		background: var(--color-bg-secondary);
 	}
 
 	.sections__nav-item:hover {
-		border-color: var(--color-nav-hover);
+		background-color: var(--color-nav-hover);
 	}
 
 	.sections__nav-item .icon {
 		width: 100%;
 		height: 100%;
-		color: #000;
+		color: #fff;
 	}
 
 	.section {
@@ -663,6 +677,7 @@ button:focus {
 		left: -2vw;
 		position: relative;
 		z-index: 100;
+		border-radius: 10px;
 	}
 
 	.section__img {
@@ -785,7 +800,6 @@ button:focus {
 
 @media screen and (max-width: 54.9em),
 screen and (max-height: 39.9em) {
-
 	.js .section__title span,
 	.js .section__description,
 	.js .section__img-inner,

@@ -63,7 +63,7 @@ export default function Contact() {
             <div className="section__expander"></div>
             <ul className="section__facts">
               <li className="section__facts-item">
-                <h3 className="section__facts-title normalcase">Email Us at<br/>hello@robocode51.com<br/>or SCAN QR:</h3>
+                <h3 className="section__facts-title normalcase">Get in touch with us at<br/><a href="mailto: hello@robocode51.com">hello@robocode51.com</a> | <a href="tel: +91-8600306965">+91-8600306965</a><br/>or SCAN QR:</h3>
                 <Image src="/img/QR.png" alt="RoboCode51" width="150" height="150" />
               </li>
             </ul>

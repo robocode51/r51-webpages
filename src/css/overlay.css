@@ -1,17 +1,17 @@
 .project-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: white;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 999;
-  transition: opacity 0.3s;
-  overflow: hidden;
-  clip-path: circle(0% at center);
-   border: 5px solid #eee;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+    transition: opacity 0.3s;
+    overflow: hidden;
+    clip-path: circle(0% at center);
+    border: 5px solid #e2d9c7;
 }
 
 .project-overlay .overlay-content {
@@ -22,30 +22,30 @@
     height: 100%;
     padding: 2rem;
     font-weight: 500;
-    gap: 20px; 
+    gap: 20px;
     line-height: 24px;
 }
 
 .close-overlay {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 99999;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 99999;
 }
 
 .overlay-text {
-  flex: 1;
+    flex: 1;
 }
 
 .overlay-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 @media screen and (max-width: 768px) {
     .project-overlay .overlay-content {
-    display: flex;
-    flex-direction: column;
+        display: flex;
+        flex-direction: column;
     }
 }

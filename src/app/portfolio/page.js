@@ -71,7 +71,7 @@ const handleExplore = (project, e) => {
                 {i !== 0 ? (
                   <div className="gallery__text">
                     <span className="gallery__text-inner capitalize" data-scroll data-scroll-speed="2">
-                      {domain} <svg className="icon icon--arrowlong"><use xlinkHref="#icon-arrowlong" /></svg>
+                      {domain} <svg className="icon icon--right"><use xlinkHref="#icon-right" /></svg>
                     </span>
                   </div>
                 ) : (
@@ -80,7 +80,7 @@ const handleExplore = (project, e) => {
                       Some of our works across domains:
                     </span>
                     <span className="gallery__text-inner capitalize" data-scroll data-scroll-speed="2">
-                      {domain} <svg className="icon icon--arrowlong"><use xlinkHref="#icon-arrowlong" /></svg>
+                      {domain} <svg className="icon icon--right"><use xlinkHref="#icon-right" /></svg>
                     </span>
                   </div>
                 )}

@@ -80,6 +80,10 @@ export default function RootLayout({
             <title>grid</title>
             <path d="M8.982 8.982h5.988v5.988H8.982zM0 0h5.988v5.988H0zM8.982 17.965h5.988v5.988H8.982zM0 8.982h5.988v5.988H0zM0 17.965h5.988v5.988H0zM17.965 0h5.988v5.988h-5.988zM8.982 0h5.988v5.988H8.982zM17.965 8.982h5.988v5.988h-5.988zM17.965 17.965h5.988v5.988h-5.988z" />
           </symbol>
+          <symbol id="icon-right" viewBox="0 0 24 24">
+            <title>right</title>
+          <path d="M6 9h6V5l7 7-7 7v-4H6V9z"/>
+          </symbol>
         </svg>
         <header className="sections__header">
           <a href="/" className="title">

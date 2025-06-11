@@ -11,13 +11,15 @@
   "dependencies": {
     "animejs": "^3.2.1",
     "charming": "^3.0.2",
-    "imagesloaded": "^5.0.0",
-    "next": "14.2.29",
-    "react": "^18",
-    "react-dom": "^18",
+    "embla-carousel-react": "^8.6.0",
+    "embla-carousel": "8.6.0",
     "gsap": "^3.5.1",
+    "imagesloaded": "^5.0.0",
     "locomotive-scroll": "^4.0.6",
-    "parcel-bundler": "^1.12.4"
+    "next": "14.2.29",
+    "parcel-bundler": "^1.12.4",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
     "eslint": "^8",

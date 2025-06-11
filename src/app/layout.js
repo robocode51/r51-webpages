@@ -84,6 +84,10 @@ export default function RootLayout({
             <title>right</title>
           <path d="M6 9h6V5l7 7-7 7v-4H6V9z"/>
           </symbol>
+          <symbol id="icon-call" viewBox="0 0 24 24">
+            <title>call</title>
+            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+          </symbol>
         </svg>
         <header className="sections__header">
           <a href="/" className="title">
@@ -98,6 +102,7 @@ export default function RootLayout({
           </a>
           <MenuClientWrapper />
         </header>
+        <a href="tel: +91-8600306965" className='floating-contact'> <svg className="icon icon--call"><use xlinkHref="#icon-call"></use></svg></a>
         {children}
       </body>
     </html>

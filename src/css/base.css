@@ -32,6 +32,7 @@ body {
 	--cursor-stroke: none;
 	--cursor-fill: #5fb6fe;
 	--cursor-stroke-width: 1px;
+	--color-muted: #5c5c5c
 }
 
 /* Page Loader */
@@ -164,6 +165,14 @@ button:focus {
 	margin: 0 2rem;
 }
 
+.contact-qr {
+	margin-top: 10px;
+}
+
+.floating-contact {
+	display: none;
+}
+
 .menu {
 	position: absolute;
 	width: 100%;
@@ -278,7 +287,7 @@ button:focus {
 }
 
 .section__description {
-	line-height: 1.75;
+	line-height: 1.5;
 	overflow: hidden;
 	position: relative;
 	padding: 0 2rem 0 0;
@@ -287,8 +296,9 @@ button:focus {
 
 .section__description-inner {
 	display: block;
-	font-size: 16px;
+	font-size: 1rem;
 	font-weight: 500;
+	color: var(--color-muted);
 }
 
 .section__img {
@@ -370,6 +380,12 @@ button:focus {
 	font-weight: bold;
 }
 
+.contact .section__facts-title {
+	line-height: 1.5em;
+    font-weight: 500;
+    font-size: 1em;
+}
+
 .normalcase {
 	text-transform: none;
 }
@@ -378,6 +394,7 @@ button:focus {
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 18px;
+	color: var(--color-muted);
 }
 
 .section__facts-item--clickable {
@@ -482,10 +499,14 @@ button:focus {
 
 @media screen and (max-width: 879px) {
 	main {
-		padding-top: 100px;
+		padding-top: 110px;
 	}
 	.sections__header {
 		background-color: #fff;
+		padding: 1rem 0;
+	}
+	.title {
+		margin: 0 2rem;
 	}
 }
 
@@ -587,6 +608,7 @@ button:focus {
 		font-size: 0.75rem;
 		display: block;
 		align-self: end;
+		align-items: center;
 		padding: 0 4rem 3rem 20%;
 		grid-area: sections-index;
 		display: flex;
@@ -601,6 +623,7 @@ button:focus {
 	.sections__index-total {
 		position: relative;
 		margin: 0 0 0 8rem;
+		color: var(--color-muted);
 	}
 
 	.sections__index-total::after {
@@ -610,12 +633,14 @@ button:focus {
 		height: 3px;
 		top: calc(50% - 1.5px);
 		right: calc(100% + 1rem);
-		background: #000;
+		background: var(--color-muted);
 	}
 
 	.sections__index-inner {
 		display: block;
 		width: 1.15rem;
+		color: #000;
+		font-size: 1rem;
 	}
 
 	.sections__nav {
@@ -813,4 +838,34 @@ screen and (max-height: 39.9em) {
 	}
 
 
+}
+
+@media screen and (max-width: 768px) {
+	.section--current .section__content {
+		padding-top: 0rem;
+	}
+	.section__facts-item:last-child {
+		margin: 0
+	}
+	.section__description {
+		margin-block-end: 0;
+	}
+	.floating-contact {
+		background-color: var(--color-bg-secondary);
+		font-size: 1rem;
+		color: #fff;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		font-weight: 500;
+		position: fixed;
+		bottom: 1rem;
+		right: 1rem;
+		z-index: 999;
+		box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+	}
 }

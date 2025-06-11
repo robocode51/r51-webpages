@@ -7,29 +7,33 @@ import projects from '@/config/projects.json';
 import ProjectOverlay from '@/components/ProjectOverlay';
 
 export default function Portfolio() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const init = async () => {
-        const LocomotiveScroll = (await import('locomotive-scroll')).default;
+useEffect(() => {
+  if (typeof window !== 'undefined') {
+    const init = async () => {
+      const LocomotiveScroll = (await import('locomotive-scroll')).default;
 
+      const isMobile = window.innerWidth <= 768;
+
+      if (!isMobile) {
         new LocomotiveScroll({
           el: document.querySelector('[data-scroll-container]'),
           smooth: true,
           direction: 'horizontal',
         });
+      }
 
-        imagesLoaded(document.querySelectorAll('img'), () => {
+      imagesLoaded(document.querySelectorAll('img'), () => {
+        requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              document.body.classList.remove('loading');
-            });
+            document.body.classList.remove('loading');
           });
         });
-      };
+      });
+    };
 
-      init();
-    }
-  }, []);
+    init();
+  }
+}, []);
 
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const [activeProject, setActiveProject] = useState(null);
@@ -40,11 +44,12 @@ const handleExplore = (project, e) => {
   const scrollY = window.scrollY || document.documentElement.scrollTop;
   const scrollX = window.scrollX || document.documentElement.scrollLeft;
 
-  setButtonPosition({
-    x: rect.left + rect.width / 2 + scrollX,
-    y: rect.top + rect.height / 2 + scrollY
-  });
+  const isMobile = window.innerWidth <= 768;
 
+  const x = rect.left + rect.width / 2 + (isMobile ? 0 : scrollX);
+  const y = rect.top + rect.height / 2 + (isMobile ? 0 : scrollY);
+
+  setButtonPosition({ x, y });
   setActiveProject(project);
   setIsOverlayOpen(true);
 };
@@ -94,12 +99,12 @@ const handleExplore = (project, e) => {
                       ></div>
                     </div>
                     <figcaption className="gallery__item-caption">
-                      <h2 className="gallery__item-title" data-scroll data-scroll-speed="1">
-                        {project.project_title}
-                      </h2>
                       <span className="gallery__item-number">
                         {String(counter++).padStart(2, '0')}
                       </span>
+                      <h2 className="gallery__item-title" data-scroll data-scroll-speed="1">
+                        {project.project_title}
+                      </h2>
                       <p className="gallery__item-tags">
                         {project.capabilities.map(cap => (
                           <span key={cap}>#{cap.toLowerCase().replace(/\s+/g, '-')}</span>
@@ -117,7 +122,7 @@ const handleExplore = (project, e) => {
               </React.Fragment>
             ))}
 
-            <div className="gallery__text">
+            <div className="gallery__text more">
               <span className="gallery__text-inner" data-scroll data-scroll-speed="4">and many</span>
               <span data-scroll data-scroll-speed="1" className="gallery__text-inner">more ....</span>
             </div>

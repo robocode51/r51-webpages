@@ -1,3 +1,4 @@
+/* overlay.css */
 .project-overlay {
     position: fixed;
     top: 0;
@@ -5,47 +6,91 @@
     width: 100vw;
     height: 100vh;
     background: white;
+    z-index: 9999;
     opacity: 0;
     pointer-events: none;
-    z-index: 999;
-    transition: opacity 0.3s;
-    overflow: hidden;
-    clip-path: circle(0% at center);
-    border: 5px solid #e2d9c7;
-}
-
-.project-overlay .overlay-content {
+    overflow-y: auto;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 100%;
     padding: 2rem;
-    font-weight: 500;
-    gap: 20px;
-    line-height: 24px;
+    transition: opacity 0.3s ease;
 }
 
-.close-overlay {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 99999;
+.overlay-content {
+    display: flex;
+    /* flex-direction: row; */
+     flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 960px;
+    width: 100%;
 }
 
 .overlay-text {
     flex: 1;
 }
 
-.overlay-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+.overlay-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
+.overlay-text p {
+    font-size: 1rem;
+    line-height: 24px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* .overlay-image {
+    flex: 1;
+    max-width: 400px;
+} */
+
+.overlay-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.close-overlay {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 10000;
+    border-radius: 5px;
+}
+
+/* ✅ Mobile responsiveness */
 @media screen and (max-width: 768px) {
-    .project-overlay .overlay-content {
-        display: flex;
+    .overlay-content {
         flex-direction: column;
+        padding: 1rem;
+    }
+
+    .overlay-image {
+        max-width: 100%;
+    }
+
+    .overlay-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .overlay-text p {
+        font-size: 0.95rem;
+    }
+
+    .close-overlay {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 }

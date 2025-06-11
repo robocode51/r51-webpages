@@ -191,6 +191,12 @@ export function initHome(pageType='home') {
         }
         layout() {
             this.currentEntry = this.DOM.entries[this.currentPos];
+            // Show or hide toggle based on fact count
+            const toggleCtrl = this.DOM.factsCtrls.toggle;
+            if (toggleCtrl) {
+                const factCount = this.currentEntry?.DOM?.facts?.items?.length || 0;
+                toggleCtrl.style.display = factCount > 2 ? 'block' : 'none';
+            }
             const factEl = this.currentEntry.DOM.facts.items[0];
             const factHeight = factEl.getBoundingClientRect().height + parseFloat(window.getComputedStyle(factEl).marginBottom);
             const paddingFactsStyle = window.getComputedStyle(this.currentEntry.DOM.facts.wrapper);
@@ -283,6 +289,12 @@ export function initHome(pageType='home') {
                     this.currentEntry = newEntry;
                     this.isEntriesAnimating = false;
                 });
+                // Update toggle visibility for new section
+                const toggleCtrl = this.DOM.factsCtrls.toggle;
+                if (toggleCtrl) {
+                const factCount = newEntry.DOM.facts.items.length;
+                toggleCtrl.style.display = factCount > 2 ? 'block' : 'none';
+                }
             };
 
             if (this.isFactsOpen) {

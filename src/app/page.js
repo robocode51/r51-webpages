@@ -44,14 +44,14 @@ export default function HomePage() {
             </button>
           </nav>
           
-          {/* Section 1: AI-Solutions */}
+          {/* Section 1: AI Agents */}
           <section className="section section--current">
             <div className="section__content">
-              <h2 className="section__title">AI-Solutions</h2>
+              <h2 className="section__title">AI&nbsp;Agents</h2>
               <p className="section__description"><span className="section__description-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
             </div>
             <div className="section__img">
-              <div className="section__img-inner" style={{backgroundImage: 'url(/img/ai.webp)'}}></div>
+              <div className="section__img-inner" style={{backgroundImage: 'url(/img/ai.jpg)'}}></div>
             </div>
             <Link href="/portfolio" className="section__more">
               <div className="section__more-inner section__more-inner--bg1">
@@ -70,23 +70,7 @@ export default function HomePage() {
                 <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               </li>
               <li className="section__facts-item">
-                <h3 className="section__facts-title">Healthcare</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
                 <h3 className="section__facts-title">Legal</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Fintech</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">EdTech</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Heritage</h3>
                 <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               </li>
             </ul>
@@ -99,7 +83,7 @@ export default function HomePage() {
               <p className="section__description"><span className="section__description-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
             </div>
             <div className="section__img">
-              <div className="section__img-inner" style={{backgroundImage: 'url(/img/roboticarm.jpg)'}}></div>
+              <div className="section__img-inner" style={{backgroundImage: 'url(/img/robotics.jpg)'}}></div>
             </div>
             <Link href="/portfolio" className="section__more">
               <div className="section__more-inner section__more-inner--bg1">
@@ -115,26 +99,6 @@ export default function HomePage() {
             <ul className="section__facts">
               <li className="section__facts-item">
                 <h3 className="section__facts-title">Manufacturing</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Healthcare</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Legal</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Fintech</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">EdTech</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Heritage</h3>
                 <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               </li>
             </ul>
@@ -162,27 +126,11 @@ export default function HomePage() {
             
             <ul className="section__facts">
               <li className="section__facts-item">
-                <h3 className="section__facts-title">Manufacturing</h3>
+                <h3 className="section__facts-title">HealthCare</h3>
                 <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               </li>
               <li className="section__facts-item">
-                <h3 className="section__facts-title">Healthcare</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Legal</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Fintech</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">EdTech</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Heritage</h3>
+                <h3 className="section__facts-title">e-Store</h3>
                 <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               </li>
             </ul>
@@ -210,27 +158,15 @@ export default function HomePage() {
             
             <ul className="section__facts">
               <li className="section__facts-item">
-                <h3 className="section__facts-title">Manufacturing</h3>
+                <h3 className="section__facts-title">e-Store</h3>
                 <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               </li>
               <li className="section__facts-item">
-                <h3 className="section__facts-title">Healthcare</h3>
+                <h3 className="section__facts-title">Marketing</h3>
                 <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               </li>
               <li className="section__facts-item">
-                <h3 className="section__facts-title">Legal</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Fintech</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">EdTech</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Heritage</h3>
+                <h3 className="section__facts-title">HealthCare</h3>
                 <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               </li>
             </ul>
@@ -239,11 +175,11 @@ export default function HomePage() {
             {/* Section 5: HealthCare */}
           <section className="section">
             <div className="section__content">
-              <h2 className="section__title">HealthCare</h2>
+              <h2 className="section__title">Health&nbsp;Tech</h2>
               <p className="section__description"><span className="section__description-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
             </div>
             <div className="section__img">
-              <div className="section__img-inner" style={{backgroundImage: 'url(/img/ai.webp)'}}></div> {/* Assuming this is a placeholder and should be a unique IOT image */}
+              <div className="section__img-inner" style={{backgroundImage: 'url(/img/healthtech.jpg)'}}></div> {/* Assuming this is a placeholder and should be a unique IOT image */}
             </div>
                        <Link href="/portfolio" className="section__more">
               <div className="section__more-inner section__more-inner--bg1">
@@ -258,27 +194,7 @@ export default function HomePage() {
             
             <ul className="section__facts">
               <li className="section__facts-item">
-                <h3 className="section__facts-title">Manufacturing</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Healthcare</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Legal</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Fintech</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">EdTech</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Heritage</h3>
+                <h3 className="section__facts-title">HealthCare</h3>
                 <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
               </li>
             </ul>

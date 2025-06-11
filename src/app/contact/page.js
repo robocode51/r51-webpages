@@ -47,24 +47,24 @@ export default function Contact() {
               </p>
             </div>
             <div className="section__img">
-              <div className="section__img-inner" style={{backgroundImage: `url('/img/contact.webp')`}}></div>
+              <div className="section__img-inner" style={{backgroundImage: `url('/img/contact.jpg')`}}></div>
             </div>
-            <div className="section__more">
+            <Link href="mailto: hi@robocode51.com" className="section__more">
               <div className="section__more-inner section__more-inner--bg1">
                 <span className="section__more-text">Let’s build something great</span>
-                <Link href="mailto: hi@robocode51.com" className="section__more-link">
+                <div className="section__more-link">
                   <span className="section__more-linktext">Drop a mail</span>
                   <svg className="icon icon--arrowlong">
                     <use xlinkHref="#icon-arrowlong"></use>
                   </svg>
-                </Link>
+                </div>
               </div>
-            </div>
+            </Link>
             <div className="section__expander"></div>
             <ul className="section__facts">
               <li className="section__facts-item">
-                <h3 className="section__facts-title normalcase">Get in touch with us at<br/><a href="mailto: hello@robocode51.com">hello@robocode51.com</a> | <a href="tel: +91-8600306965">+91-8600306965</a><br/>or SCAN QR:</h3>
-                <Image src="/img/QR.png" alt="RoboCode51" width="150" height="150" />
+                <h3 className="section__facts-title normalcase">Get in touch with us at<br/><a href="mailto: business@robocode51.com">E: business@robocode51.com</a><br/><a href="tel: +91-8600306965">M: +91-8600306965</a><br/>or SCAN QR:</h3>
+                <Image src="/img/QR.png" className='contact-qr' alt="RoboCode51" width="150" height="150" />
               </li>
             </ul>
           </section>

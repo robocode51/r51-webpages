@@ -3,10 +3,13 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import '@/css/overlay.css';
+import '@/css/emblaSlider.css'
+import EmblaCarousel from './Slider/EmblaCarousel'
 
 export default function ProjectOverlay({ isOpen, onClose, title, description, image, position }) {
   const overlayRef = useRef();
-
+  const OPTIONS = { loop: true }
+  const SLIDES = ["/img/portfolio/amor.jpg","/img/portfolio/ono.jpg","/img/portfolio/wdigital.jpg"]
   useEffect(() => {
     if (!isOpen || !position || !overlayRef.current) return;
 
@@ -19,13 +22,6 @@ export default function ProjectOverlay({ isOpen, onClose, title, description, im
       opacity: 1,
       pointerEvents: 'auto'
     });
-
-    // Animate circle expand
-    // gsap.to(overlay, {
-    //   clipPath: `circle(150% at ${x}px ${y}px)`,
-    //   duration: 2, // previously 0.6
-    //   ease: 'power3.out', // smoother easing
-    // });
 
     gsap.to(overlay, {
       clipPath: `circle(200% at ${x}px ${y}px)`,
@@ -71,7 +67,7 @@ export default function ProjectOverlay({ isOpen, onClose, title, description, im
           <p>{description}</p>
         </div>
         <div className="overlay-image">
-          <img src={image} alt={title} />
+          <EmblaCarousel slides={SLIDES} options={OPTIONS} />
         </div>
       </div>
     </div>

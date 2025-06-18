@@ -264,6 +264,19 @@ export function initHome(pageType='home') {
             };
             this.hasBoundEvents = true; // ✅ Mark as bound
             window.addEventListener('resize', debounce(() => this.onResize(), 20));
+
+            // Scroll navigation
+            this.onWheelScroll = debounce((event) => {
+            if (this.isEntriesAnimating || this.isFactsAnimating) return;
+
+            if (event.deltaY > 0) {
+                this.navigate('next');
+            } else if (event.deltaY < 0) {
+                this.navigate('prev');
+            }
+            }, 5); // adjust delay as needed
+
+            window.addEventListener('wheel', this.onWheelScroll, { passive: true });
         }
         navigate(direction) {
             if (this.isEntriesAnimating || this.isFactsAnimating) return;

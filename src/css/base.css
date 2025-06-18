@@ -296,7 +296,7 @@ button:focus {
 
 .section__description-inner {
 	display: block;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	font-weight: 500;
 	color: var(--color-muted);
 }
@@ -392,7 +392,7 @@ button:focus {
 
 .section__facts-detail {
 	font-weight: 500;
-	font-size: 14px;
+	font-size: 0.8rem;
 	line-height: 18px;
 	color: var(--color-muted);
 }

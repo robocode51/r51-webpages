@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import { initHome } from '@/utils/home';
 import Link from 'next/link';
+import content from '@/content/home/en.json'; // Direct import from alias
 
 export default function HomePage() {
   useEffect(() => {
@@ -9,6 +10,15 @@ export default function HomePage() {
       initHome();
     }
   }, []);
+
+  // Define an array of section IDs to iterate over
+  const sectionKeys = [
+    'ai_agent',
+    'robotics',
+    'saas',
+    'branding',
+    'health_tech'
+  ];
 
   return (
     <>
@@ -18,11 +28,11 @@ export default function HomePage() {
             <div className="facts__toggle">
               <span className="facts__toggle-inner facts__toggle-inner--more">
                 <svg className="icon icon--dot"><use xlinkHref="#icon-dot"></use></svg>
-                <span className="facts__toggle-text">See more domains</span>
+                <span className="facts__toggle-text">{content.common.factsToggle.moreDomains}</span>
               </span>
               <span className="facts__toggle-inner facts__toggle-inner--less">
                 <svg className="icon icon--cross"><use xlinkHref="#icon-cross"></use></svg>
-                <span className="facts__toggle-text">See less domains</span>
+                <span className="facts__toggle-text">{content.common.factsToggle.lessDomains}</span>
               </span>
             </div>
             <button className="button-contentclose">
@@ -31,9 +41,9 @@ export default function HomePage() {
           </div>
           <div className="sections__index">
             <span className="sections__index-current">
-              <span className="sections__index-inner">01</span>
+              <span className="sections__index-inner">01</span> {/* This '01' might also be dynamic later */}
             </span>
-            <span className="sections__index-total">05</span>
+            <span className="sections__index-total">{content.common.sectionsIndex.total}</span>
           </div>
           <nav className="sections__nav">
             <button className="sections__nav-item sections__nav-item--prev">
@@ -44,161 +54,60 @@ export default function HomePage() {
             </button>
           </nav>
           
-          {/* Section 1: AI Agents */}
-          <section className="section section--current">
-            <div className="section__content">
-              <h2 className="section__title">AI&nbsp;Agents</h2>
-              <p className="section__description"><span className="section__description-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
-            </div>
-            <div className="section__img">
-              <div className="section__img-inner" style={{backgroundImage: 'url(/img/ai.jpg)'}}></div>
-            </div>
-            <Link href="/portfolio" className="section__more">
-              <div className="section__more-inner section__more-inner--bg1">
-                <span className="section__more-text">Want to know more?</span>
-                <span className="section__more-link">
-                  <span className="section__more-linktext">Explore projects</span>
-                  <svg className="icon icon--arrowlong"><use xlinkHref="#icon-arrowlong"></use></svg>
-                </span>
-              </div>
-            </Link>
-            <div className="section__expander"></div>
-            
-            <ul className="section__facts">
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Manufacturing</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Legal</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-            </ul>
-          </section>
+          {sectionKeys.map((key, index) => {
+            const sectionContent = content.home[key];
+            if (!sectionContent) return null; // Handle cases where data might be missing
 
-          {/* Section 2: Robotics */}
-          <section className="section">
-            <div className="section__content">
-              <h2 className="section__title">Robotics</h2>
-              <p className="section__description"><span className="section__description-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
-            </div>
-            <div className="section__img">
-              <div className="section__img-inner" style={{backgroundImage: 'url(/img/robotics.jpg)'}}></div>
-            </div>
-            <Link href="/portfolio" className="section__more">
-              <div className="section__more-inner section__more-inner--bg1">
-                <span className="section__more-text">Want to know more?</span>
-                <span className="section__more-link">
-                  <span className="section__more-linktext">Explore projects</span>
-                  <svg className="icon icon--arrowlong"><use xlinkHref="#icon-arrowlong"></use></svg>
-                </span>
-              </div>
-            </Link>
-            <div className="section__expander"></div>
-            
-            <ul className="section__facts">
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Manufacturing</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-            </ul>
-          </section>
+            const isCurrent = index === 0 ? " section--current" : ""; // Only first section is 'current'
+            const moreLinkData = content.common.moreLink; // Use common link data
 
-          {/* Section 3: SAAS */}
-          <section className="section">
-            <div className="section__content">
-              <h2 className="section__title">SAAS</h2>
-              <p className="section__description"><span className="section__description-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
-            </div>
-            <div className="section__img">
-              <div className="section__img-inner" style={{backgroundImage: 'url(/img/saas.webp)'}}></div>
-            </div>
-            <Link href="/portfolio" className="section__more">
-              <div className="section__more-inner section__more-inner--bg1">
-                <span className="section__more-text">Want to know more?</span>
-                <span className="section__more-link">
-                  <span className="section__more-linktext">Explore projects</span>
-                  <svg className="icon icon--arrowlong"><use xlinkHref="#icon-arrowlong"></use></svg>
-                </span>
-              </div>
-            </Link>
-            <div className="section__expander"></div>
-            
-            <ul className="section__facts">
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">HealthCare</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">e-Store</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-            </ul>
-          </section>
+            return (
+              <section key={sectionContent.id || key} className={`section${isCurrent}`}>
+                <div className="section__content">
+                  <h2 className="section__title">{sectionContent.title}</h2>
+                  <p className="section__description">
+                    <span className="section__description-inner">{sectionContent.description}</span>
+                  </p>
+                </div>
 
-          {/* Section 4: Branding */}
-          <section className="section">
-            <div className="section__content">
-              <h2 className="section__title">Branding</h2>
-              <p className="section__description"><span className="section__description-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
-            </div>
-            <div className="section__img">
-              <div className="section__img-inner" style={{backgroundImage: 'url(/img/branding.jpg)'}}></div> {/* Assuming this is a placeholder and should be a unique IOT image */}
-            </div>
-                       <Link href="/portfolio" className="section__more">
-              <div className="section__more-inner section__more-inner--bg1">
-                <span className="section__more-text">Want to know more?</span>
-                <span className="section__more-link">
-                  <span className="section__more-linktext">Explore projects</span>
-                  <svg className="icon icon--arrowlong"><use xlinkHref="#icon-arrowlong"></use></svg>
-                </span>
-              </div>
-            </Link>
-            <div className="section__expander"></div>
-            
-            <ul className="section__facts">
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">e-Store</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">Marketing</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">HealthCare</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-            </ul>
-          </section>
+                <div className="section__img">
+                  {sectionContent.image?.url && (
+                    <div
+                      className="section__img-inner"
+                      style={{ backgroundImage: `url(${sectionContent.image.url})` }}
+                    ></div>
+                  )}
+                </div>
 
-            {/* Section 5: HealthCare */}
-          <section className="section">
-            <div className="section__content">
-              <h2 className="section__title">Health&nbsp;Tech</h2>
-              <p className="section__description"><span className="section__description-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
-            </div>
-            <div className="section__img">
-              <div className="section__img-inner" style={{backgroundImage: 'url(/img/healthtech.jpg)'}}></div> {/* Assuming this is a placeholder and should be a unique IOT image */}
-            </div>
-                       <Link href="/portfolio" className="section__more">
-              <div className="section__more-inner section__more-inner--bg1">
-                <span className="section__more-text">Want to know more?</span>
-                <span className="section__more-link">
-                  <span className="section__more-linktext">Explore projects</span>
-                  <svg className="icon icon--arrowlong"><use xlinkHref="#icon-arrowlong"></use></svg>
-                </span>
-              </div>
-            </Link>
-            <div className="section__expander"></div>
-            
-            <ul className="section__facts">
-              <li className="section__facts-item">
-                <h3 className="section__facts-title">HealthCare</h3>
-                <span className="section__facts-detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-              </li>
-            </ul>
-          </section>
+                {moreLinkData && (
+                  <Link href={moreLinkData.href} className="section__more">
+                    <div className="section__more-inner section__more-inner--bg1">
+                      <span className="section__more-text">{moreLinkData.text}</span>
+                      <span className="section__more-link">
+                        <span className="section__more-linktext">{moreLinkData.exploreText}</span>
+                        <svg className="icon icon--arrowlong">
+                          <use xlinkHref="#icon-arrowlong"></use>
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                )}
+
+                <div className="section__expander"></div>
+                
+                {sectionContent.facts?.length > 0 && (
+                  <ul className="section__facts">
+                    {sectionContent.facts.map((fact, factIndex) => (
+                      <li key={`${sectionContent.id}-${factIndex}`} className="section__facts-item">
+                        <h3 className="section__facts-title">{fact.title}</h3>
+                        <span className="section__facts-detail">{fact.detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </section>
+            );
+          })}
         </div>
       </main>
     </>

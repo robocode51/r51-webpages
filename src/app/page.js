@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { initHome } from '@/utils/home';
 import Link from 'next/link';
-import content from '@/content/home/en.json'; // Direct import from alias
+import content from '@/config/home/en.json'; // Direct import from alias
 
 export default function HomePage() {
   useEffect(() => {

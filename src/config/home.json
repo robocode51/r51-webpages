@@ -1,0 +1,128 @@
+{
+  "common": {
+    "factsToggle": {
+      "moreDomains": "See more domains",
+      "lessDomains": "See less domains"
+    },
+    "sectionsIndex": {
+      "total": "05"
+    },
+    "moreLink": {
+      "href": "/portfolio",
+      "text": "Want to know more?",
+      "exploreText": "Explore projects"
+    }
+  },
+  "home": {
+    "ai_agent": {
+      "id": "ai_agents",
+      "title": "AI\u00A0Agents",
+      "description": "At Robocode, we're building the next generation of intelligent AI agents designed to automate complex tasks, enhance decision-making, and unlock unprecedented efficiency across various sectors. Discover how our AI solutions are transforming the future of work.",
+      "image": {
+        "url": "/img/ai.jpg"
+      },
+      "facts": [
+        {
+          "title": "Manufacturing Optimization",
+          "detail": "Our AI agents streamline production lines, predict equipment failures, and optimize supply chains, leading to significant cost reductions and increased output quality for manufacturers worldwide."
+        },
+        {
+          "title": "Legal Process Automation",
+          "detail": "Transforming the legal landscape, our AI tools accelerate document review, assist with case research, and automate contract analysis, freeing up legal professionals for higher-value work."
+        },
+        {
+          "title": "Healthcare Solutions",
+          "detail": "From personalized patient care pathways to efficient administrative tasks and diagnostic support, our AI agents are empowering healthcare providers to deliver better, faster, and more accessible services."
+        },
+        {
+          "title": "Financial Services Insight",
+          "detail": "Leverage AI for fraud detection, risk assessment, and personalized financial advice. Our agents provide actionable insights to secure transactions and guide investment strategies."
+        }
+      ]
+    },
+    "robotics": {
+      "id": "robotics",
+      "title": "Robotics",
+      "description": "Explore the cutting-edge of automation with our robotics solutions. We develop intelligent robotic systems for diverse applications, from industrial automation to service robotics, enhancing productivity and safety.",
+      "image": {
+        "url": "/img/robotics.jpg"
+      },
+      "facts": [
+        {
+          "title": "Industrial Automation",
+          "detail": "Automating repetitive and hazardous tasks, our robotic systems improve precision, speed, and safety in manufacturing and logistics operations."
+        },
+        {
+          "title": "Autonomous Systems",
+          "detail": "Designing and deploying self-operating machines for complex environments, including exploration, surveillance, and intelligent assistance."
+        }
+      ]
+    },
+    "saas": {
+      "id": "saas",
+      "title": "SaaS",
+      "description": "Unlock efficiency and scalability with our custom Software-as-a-Service platforms. We build cloud-native applications designed to meet your business needs, offering flexible, secure, and accessible solutions.",
+      "image": {
+        "url": "/img/saas.webp"
+      },
+      "facts": [
+        {
+          "title": "Cloud Infrastructure",
+          "detail": "Developing robust and scalable cloud-based infrastructures that ensure high availability and seamless performance for your SaaS applications."
+        },
+        {
+          "title": "Subscription Management",
+          "detail": "Implementing comprehensive solutions for managing user subscriptions, billing, and customer relationships, optimizing your revenue streams."
+        },
+        {
+          "title": "Data Security",
+          "detail": "Prioritizing data integrity and privacy with advanced security protocols and compliance measures integrated into every SaaS solution."
+        }
+      ]
+    },
+    "branding": {
+      "id": "branding",
+      "title": "Branding",
+      "description": "Crafting compelling brand narratives and digital presences that resonate with your target audience. Our branding services help you establish a strong, memorable identity in a competitive market.",
+      "image": {
+        "url": "/img/branding.jpg"
+      },
+      "facts": [
+        {
+          "title": "Brand Strategy",
+          "detail": "Developing foundational brand strategies that define your mission, vision, and values, guiding all aspects of your market presence."
+        },
+        {
+          "title": "Visual Identity",
+          "detail": "Designing impactful logos, color palettes, typography, and visual elements that create a cohesive and recognizable brand image."
+        },
+        {
+          "title": "Digital Campaigns",
+          "detail": "Executing integrated digital marketing campaigns across platforms to enhance brand visibility and engagement."
+        }
+      ]
+    },
+    "health_tech": {
+      "id": "health_tech",
+      "title": "Health\u00A0Tech",
+      "description": "Pioneering technology solutions for the healthcare industry. From telemedicine platforms to AI-powered diagnostics, we're dedicated to improving patient outcomes and operational efficiency.",
+      "image": {
+        "url": "/img/healthtech.jpg"
+      },
+      "facts": [
+        {
+          "title": "Telemedicine Platforms",
+          "detail": "Building secure and user-friendly virtual consultation platforms that connect patients with healthcare professionals remotely."
+        },
+        {
+          "title": "AI Diagnostics",
+          "detail": "Leveraging artificial intelligence to assist in early disease detection and accurate diagnosis, supporting clinicians with powerful insights."
+        },
+        {
+          "title": "Patient Data Management",
+          "detail": "Developing robust systems for secure and compliant management of patient records, enhancing data accessibility for authorized personnel."
+        }
+      ]
+    }
+  }
+}

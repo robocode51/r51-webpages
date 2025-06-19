@@ -1,0 +1,35 @@
+{
+  "contact": {
+    "factsToggle": {
+      "moreDomains": "See more domains",
+      "lessDomains": "See less domains"
+    },
+    "title": "Contact\u00A0Us",
+    "description": [
+      "We’re always excited to hear from visionaries, innovators, and change-makers. Whether you’re looking to build a smart system, explore AI integration, or collaborate on cutting-edge robotics, our team at RoboCode51 is here to help you bring bold ideas to life.",
+      "Reach out to us to start a meaningful conversation — whether it’s a product inquiry, strategic partnership, or just exploring possibilities. Every great solution begins with a simple hello."
+    ],
+    "image": {
+      "url": "/img/contact.jpg"
+    },
+    "callToAction": {
+      "href": "mailto: hi@robocode51.com",
+      "text": "Let’s build something great",
+      "linkText": "Drop a mail"
+    },
+    "facts": [
+      {
+        "title": "Get in touch with us at",
+        "email": "business@robocode51.com",
+        "phone": "+91-8600306965",
+        "qrText": "or SCAN QR:",
+        "qrImage": {
+          "src": "/img/QR.png",
+          "alt": "RoboCode51 QR Code",
+          "width": 150,
+          "height": 150
+        }
+      }
+    ]
+  }
+}

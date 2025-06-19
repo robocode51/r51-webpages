@@ -267,7 +267,7 @@ export function initHome(pageType='home') {
 
             // Scroll navigation
             this.onWheelScroll = debounce((event) => {
-            if (this.isEntriesAnimating || this.isFactsAnimating) return;
+            if (this.isEntriesAnimating || this.isFactsAnimating || pageType != 'home') return;
 
             if (event.deltaY > 0) {
                 this.navigate('next');

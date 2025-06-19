@@ -60,7 +60,7 @@
     },
     "saas": {
       "id": "saas",
-      "title": "SaaS\u00A0Services",
+      "title": "SaaS",
       "description": "Unlock efficiency and scalability with our custom Software-as-a-Service platforms. We build cloud-native applications designed to meet your business needs, offering flexible, secure, and accessible solutions.",
       "image": {
         "url": "/img/saas.webp"
@@ -104,7 +104,7 @@
     },
     "health_tech": {
       "id": "health_tech",
-      "title": "Health\u00A0ech",
+      "title": "Health\u00A0Tech",
       "description": "Pioneering technology solutions for the healthcare industry. From telemedicine platforms to AI-powered diagnostics, we're dedicated to improving patient outcomes and operational efficiency.",
       "image": {
         "url": "/img/healthtech.jpg"

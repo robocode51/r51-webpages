@@ -1,8 +1,8 @@
-"use client"; // Required for components with event handlers or client-side hooks/scripts
+"use client";
 import { useEffect } from 'react';
 import { initHome } from '@/utils/home';
 import Link from 'next/link';
-import content from '@/config/home/en.json'; // Direct import from alias
+import content from '@/config/home.json';
 
 export default function HomePage() {
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function HomePage() {
           </div>
           <div className="sections__index">
             <span className="sections__index-current">
-              <span className="sections__index-inner">01</span> {/* This '01' might also be dynamic later */}
+              <span className="sections__index-inner">01</span>
             </span>
             <span className="sections__index-total">{content.common.sectionsIndex.total}</span>
           </div>

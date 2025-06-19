@@ -3,14 +3,9 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import { initHome } from '@/utils/home';
 import Image from 'next/image';
-
-// Assuming you'll have a mechanism to load the correct locale's content
-// For simplicity, we'll import it directly here. In a real i18n setup,
-// this 'content' object would come from a context or prop.
-import content from '@/config/contact/en.json'; // Directly import the JSON
+import content from '@/config/contact.json';
 
 export default function Contact() {
-  // Use the 'contact' key from your JSON
   const contactContent = content.contact;
 
   useEffect(() => {

@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^15.3.3",
     "animejs": "^3.2.1",
     "charming": "^3.0.2",
-    "embla-carousel-react": "^8.6.0",
     "embla-carousel": "8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "gsap": "^3.5.1",
     "imagesloaded": "^5.0.0",
     "locomotive-scroll": "^4.0.6",

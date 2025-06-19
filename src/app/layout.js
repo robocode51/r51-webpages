@@ -2,7 +2,7 @@ import { Urbanist } from 'next/font/google';
 import Script from 'next/script';
 import '@/css/normalize.css';
 import '@/css/base.css';
-
+import { GoogleTagManager } from '@next/third-parties/google'
 import Image from 'next/image';
 import MenuClientWrapper from '@/components/Menu';
 import Link from 'next/link';
@@ -40,6 +40,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
+      <GoogleTagManager gtmId="G-PZ8XXEZSEV" />
       <body className={`loading ${urbanist.className}`}>
        
         {/* SVG Symbols: Ensure they are hidden by default if CSS isn't loaded */}

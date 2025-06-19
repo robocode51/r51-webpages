@@ -93,7 +93,7 @@ export default function Contact() {
                       </>
                     )}
                     {fact.qrText && (
-                      <>{fact.qrText}</>
+                      <><br/>{fact.qrText}</>
                     )}
                   </h3>
                   {fact.qrImage && (

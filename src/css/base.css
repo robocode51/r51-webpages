@@ -32,7 +32,8 @@ body {
 	--cursor-stroke: none;
 	--cursor-fill: #5fb6fe;
 	--cursor-stroke-width: 1px;
-	--color-muted: #5c5c5c
+	--color-muted: #5c5c5c;
+	overflow-y: hidden;
 }
 
 /* Page Loader */
@@ -498,6 +499,9 @@ button:focus {
 }
 
 @media screen and (max-width: 879px) {
+	body {
+		overflow-y: auto;
+	}
 	main {
 		padding-top: 110px;
 	}

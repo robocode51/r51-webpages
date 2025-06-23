@@ -1,11 +1,8 @@
 {
   "common": {
     "factsToggle": {
-      "moreDomains": "See more domains",
-      "lessDomains": "See less domains"
-    },
-    "sectionsIndex": {
-      "total": "05"
+      "moreDomains": "See more",
+      "lessDomains": "See less"
     },
     "moreLink": {
       "href": "/portfolio",
@@ -16,7 +13,7 @@
   "home": {
     "ai_agent": {
       "id": "ai_agents",
-      "title": "AI\u00A0Agents",
+      "title": "AI\u00A0Engineering",
       "description": "At Robocode, we're building the next generation of intelligent AI agents designed to automate complex tasks, enhance decision-making, and unlock unprecedented efficiency across various sectors. Discover how our AI solutions are transforming the future of work.",
       "image": {
         "url": "/img/ai.jpg"
@@ -60,7 +57,7 @@
     },
     "saas": {
       "id": "saas",
-      "title": "SaaS",
+      "title": "Software",
       "description": "Unlock efficiency and scalability with our custom Software-as-a-Service platforms. We build cloud-native applications designed to meet your business needs, offering flexible, secure, and accessible solutions.",
       "image": {
         "url": "/img/saas.webp"
@@ -99,28 +96,6 @@
         {
           "title": "Digital Campaigns",
           "detail": "Executing integrated digital marketing campaigns across platforms to enhance brand visibility and engagement."
-        }
-      ]
-    },
-    "health_tech": {
-      "id": "health_tech",
-      "title": "Health\u00A0Tech",
-      "description": "Pioneering technology solutions for the healthcare industry. From telemedicine platforms to AI-powered diagnostics, we're dedicated to improving patient outcomes and operational efficiency.",
-      "image": {
-        "url": "/img/healthtech.jpg"
-      },
-      "facts": [
-        {
-          "title": "Telemedicine Platforms",
-          "detail": "Building secure and user-friendly virtual consultation platforms that connect patients with healthcare professionals remotely."
-        },
-        {
-          "title": "AI Diagnostics",
-          "detail": "Leveraging artificial intelligence to assist in early disease detection and accurate diagnosis, supporting clinicians with powerful insights."
-        },
-        {
-          "title": "Patient Data Management",
-          "detail": "Developing robust systems for secure and compliant management of patient records, enhancing data accessibility for authorized personnel."
         }
       ]
     }

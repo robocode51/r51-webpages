@@ -25,9 +25,9 @@ export function initHome(pageType='home') {
         image: { duration: 900, delay: 0, easing: 'cubicBezier(0.8, 0, 0.2, 1)' },
         more: { duration: 900, delay: 0, easing: 'cubicBezier(0.8, 0, 0.2, 1)' },
         facts: { duration: 300, delay: 0, easing: 'cubicBezier(0.8, 0, 0.2, 1)' },
-        title: { duration: 700, delay: 200, easing: 'cubicBezier(0.8, 0, 0.2, 1)' },
-        description: { duration: 900, delay: 400, easing: 'easeOutExpo' },
-        pagination: { duration: 300, delay: 400, easing: 'easeInOutQuad' },
+        title: { duration: 700, delay: 100, easing: 'cubicBezier(0.8, 0, 0.2, 1)' },
+        description: { duration: 900, delay: 200, easing: 'easeOutExpo' },
+        pagination: { duration: 300, delay: 200, easing: 'easeInOutQuad' },
 
         menuCtrl: { duration: 300, easing: 'cubicBezier(0.2, 1, 0.3, 1)' },
         menuItems: { duration: 300, easing: 'cubicBezier(0.2, 1, 0.3, 1)' },
@@ -90,7 +90,7 @@ export function initHome(pageType='home') {
             return anime({
                 targets: this.DOM.titleLetters,
                 duration: settings.title.duration,
-                delay: (target, index) => index * 30 + settings.title.delay,
+                delay: (target, index) => index * 15 + settings.title.delay,
                 easing: settings.title.easing,
                 translateY: this.isHidden ? [0, this.direction === 'next' ? '-100%' : '100%'] : [this.direction === 'next' ? '100%' : '-100%', 0],
                 opacity: {
@@ -165,6 +165,8 @@ export function initHome(pageType='home') {
         constructor(el) {
             this.DOM = {};
             this.DOM.el = el;
+            this.userInteractedTimeout = null;
+            this.userIsInteracting = false;
             this.init();
         }
         init() {
@@ -188,6 +190,7 @@ export function initHome(pageType='home') {
             this.layout();
             // Init/Bind events.
             this.initEvents();
+            this.startAutoScroll();
         }
         layout() {
             this.currentEntry = this.DOM.entries[this.currentPos];
@@ -227,8 +230,16 @@ export function initHome(pageType='home') {
             // Navigation
             this.onPrevClick = () => this.navigate('prev');
             this.onNextClick = () => this.navigate('next');
-            this.DOM.navigation.prevCtrl.addEventListener('click', this.onPrevClick);
-            this.DOM.navigation.nextCtrl.addEventListener('click', this.onNextClick);
+            // this.DOM.navigation.prevCtrl.addEventListener('click', this.onPrevClick);
+            // this.DOM.navigation.nextCtrl.addEventListener('click', this.onNextClick);
+            this.DOM.navigation.prevCtrl.addEventListener('click', () => {
+                this.handleUserInteraction();
+                this.navigate('prev');
+            });
+            this.DOM.navigation.nextCtrl.addEventListener('click', () => {
+                this.handleUserInteraction();
+                this.navigate('next');
+            });
 
             // Facts Container
             this.DOM.factsCtrls.toggle.addEventListener('click', () => this.toggleFactsContainer());
@@ -274,13 +285,18 @@ export function initHome(pageType='home') {
             } else if (event.deltaY < 0) {
                 this.navigate('prev');
             }
-            }, 5); // adjust delay as needed
+            }, 0); // adjust delay as needed
 
             window.addEventListener('wheel', this.onWheelScroll, { passive: true });
+
+            ['click', 'wheel', 'touchstart', 'keydown'].forEach(evt =>
+                window.addEventListener(evt, () => this.handleUserInteraction(), { passive: true })
+            );
         }
         navigate(direction) {
             if (this.isEntriesAnimating || this.isFactsAnimating) return;
             this.isEntriesAnimating = true;
+            // this.stopAutoScroll(); // optional: pause auto-scroll when user interacts
             // Store direction
             this.direction = direction;
             // Update currentPos
@@ -291,6 +307,37 @@ export function initHome(pageType='home') {
             const newEntry = this.DOM.entries[newPos];
 
             this.update(newEntry);
+        }
+        handleUserInteraction() {
+            if (this.userIsInteracting) return;
+
+            this.userIsInteracting = true;
+            this.stopAutoScroll();
+
+            // Reset previous timeout
+            if (this.userInteractedTimeout) {
+                clearTimeout(this.userInteractedTimeout);
+            }
+
+            // Resume auto-scroll after 5s of inactivity
+            this.userInteractedTimeout = setTimeout(() => {
+                this.userIsInteracting = false;
+                this.startAutoScroll();
+            }, 5000);
+        }
+        startAutoScroll() {
+            this.autoScrollInterval = setInterval(() => {
+                if (!this.isEntriesAnimating && !this.isFactsAnimating && !this.isFactsOpen) {
+                this.navigate('next');
+                }
+            }, 4000);
+        }
+
+        stopAutoScroll() {
+            if (this.autoScrollInterval) {
+                clearInterval(this.autoScrollInterval);
+                this.autoScrollInterval = null;
+            }
         }
         update(newEntry) {
             const updateFn = () => {
@@ -333,7 +380,7 @@ export function initHome(pageType='home') {
                     { value: [0, 1], delay: settings.pagination.duration }
                 ],
                 update: (anime) => {
-                    if (anime.progress >= 50 && !halfway) {
+                    if (anime.progress >= 40 && !halfway) {
                         halfway = true;
                         this.DOM.pagination.innerHTML = `0${this.currentPos + 1}`;
                     }

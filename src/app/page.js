@@ -50,7 +50,7 @@ export default function HomePage() {
             const sectionContent = value;
             if (!sectionContent) return null; // Handle cases where data might be missing
 
-            const isCurrent = key === 0 ? " section--current" : ""; // Only first section is 'current'
+            const isCurrent = key === "ai_agent" ? " section--current" : ""; // Only first section is 'current'
             const moreLinkData = content.common.moreLink; // Use common link data
 
             return (

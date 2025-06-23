@@ -13,7 +13,7 @@
   "home": {
     "ai_agent": {
       "id": "ai_agents",
-      "title": "AI\u00A0Engineering",
+      "title": "AI",
       "description": "At Robocode, we're building the next generation of intelligent AI agents designed to automate complex tasks, enhance decision-making, and unlock unprecedented efficiency across various sectors. Discover how our AI solutions are transforming the future of work.",
       "image": {
         "url": "/img/ai.jpg"

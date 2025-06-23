@@ -11,15 +11,6 @@ export default function HomePage() {
     }
   }, []);
 
-  // Define an array of section IDs to iterate over
-  const sectionKeys = [
-    'ai_agent',
-    'robotics',
-    'saas',
-    'branding',
-    'health_tech'
-  ];
-
   return (
     <>
       <main>
@@ -43,7 +34,8 @@ export default function HomePage() {
             <span className="sections__index-current">
               <span className="sections__index-inner">01</span>
             </span>
-            <span className="sections__index-total">{content.common.sectionsIndex.total}</span>
+            <span className="sections__index-total">{"0" + Object.keys(content.home).length}</span>
+            
           </div>
           <nav className="sections__nav">
             <button className="sections__nav-item sections__nav-item--prev">
@@ -54,11 +46,11 @@ export default function HomePage() {
             </button>
           </nav>
           
-          {sectionKeys.map((key, index) => {
-            const sectionContent = content.home[key];
+          {Object.entries(content.home).map(([key, value]) => {
+            const sectionContent = value;
             if (!sectionContent) return null; // Handle cases where data might be missing
 
-            const isCurrent = index === 0 ? " section--current" : ""; // Only first section is 'current'
+            const isCurrent = key === "ai_agent" ? " section--current" : ""; // Only first section is 'current'
             const moreLinkData = content.common.moreLink; // Use common link data
 
             return (

@@ -393,7 +393,7 @@ button:focus {
 
 .section__facts-detail {
 	font-weight: 500;
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	line-height: 18px;
 	color: var(--color-muted);
 }

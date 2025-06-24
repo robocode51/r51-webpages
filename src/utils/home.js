@@ -190,7 +190,7 @@ export function initHome(pageType = 'home') {
             this.layout();
             // Init/Bind events.
             this.initEvents();
-            this.startAutoScroll();
+            pageType == 'home' && this.startAutoScroll();
         }
         layout() {
             this.currentEntry = this.DOM.entries[this.currentPos];
@@ -322,7 +322,7 @@ export function initHome(pageType = 'home') {
             // Resume auto-scroll after 5s of inactivity
             this.userInteractedTimeout = setTimeout(() => {
                 this.userIsInteracting = false;
-                this.startAutoScroll();
+                pageType == 'home' && this.startAutoScroll();
             }, 5000);
         }
         startAutoScroll() {

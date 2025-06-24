@@ -6,6 +6,7 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import Image from 'next/image';
 import MenuClientWrapper from '@/components/Menu';
 import Link from 'next/link';
+import Loader from '@/components/Loader';
 
 const urbanist = Urbanist({
   subsets: ['latin'],
@@ -42,7 +43,7 @@ export default function RootLayout({
       </head>
       <GoogleTagManager gtmId="G-PZ8XXEZSEV" />
       <body className={`loading ${urbanist.className}`}>
-       
+
         {/* SVG Symbols: Ensure they are hidden by default if CSS isn't loaded */}
         <svg className="hidden" style={{ display: 'none', position: 'absolute', width: 0, height: 0 }}>
           <symbol id="icon-arrow" viewBox="0 0 24 24">
@@ -83,13 +84,14 @@ export default function RootLayout({
           </symbol>
           <symbol id="icon-right" viewBox="0 0 24 24">
             <title>right</title>
-          <path d="M6 9h6V5l7 7-7 7v-4H6V9z"/>
+            <path d="M6 9h6V5l7 7-7 7v-4H6V9z" />
           </symbol>
           <symbol id="icon-call" viewBox="0 0 24 24">
             <title>call</title>
-            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
           </symbol>
         </svg>
+        <Loader />
         <header className="sections__header">
           <a href="/" className="title">
             <Image

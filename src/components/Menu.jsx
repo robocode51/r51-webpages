@@ -42,8 +42,11 @@ export default function MenuClientWrapper() {
         <ul className="menu__inner">
           <li className="menu__item"><a className="menu__item-link" href="/">Home</a></li>
           <li className="menu__item"><a className="menu__item-link" href="/portfolio">Portfolio</a></li>
-          {/* <li className="menu__item"><a className="menu__item-link" href="#">Team</a></li> */}
           <li className="menu__item"><a className="menu__item-link" href="/contact">Contact Us</a></li>
+          {/* <li className="menu__item"><Link className="menu__item-link" href="/">Home</Link></li>
+          <li className="menu__item"><Link className="menu__item-link" href="/portfolio">Portfolio</Link></li>
+          <li className="menu__item"><a className="menu__item-link" href="#">Team</a></li>
+          <li className="menu__item"><Link className="menu__item-link" href="/contact">Contact Us</Link></li> */}
         </ul>
         <div className="menu__toggle">
           <span className="menu__toggle-inner menu__toggle-inner--open">

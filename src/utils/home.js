@@ -1,7 +1,7 @@
 import imagesLoaded from 'imagesloaded';
 import charming from 'charming';
 import anime from 'animejs';
-export function initHome(pageType='home') {
+export function initHome(pageType = 'home') {
     function debounce(func, wait, immediate) {
         var timeout;
         return function () {
@@ -190,7 +190,7 @@ export function initHome(pageType='home') {
             this.layout();
             // Init/Bind events.
             this.initEvents();
-            this.startAutoScroll();
+            pageType == 'home' && this.startAutoScroll();
         }
         layout() {
             this.currentEntry = this.DOM.entries[this.currentPos];
@@ -278,13 +278,13 @@ export function initHome(pageType='home') {
 
             // Scroll navigation
             this.onWheelScroll = debounce((event) => {
-            if (this.isEntriesAnimating || this.isFactsAnimating || pageType != 'home') return;
+                if (this.isEntriesAnimating || this.isFactsAnimating || pageType != 'home') return;
 
-            if (event.deltaY > 0) {
-                this.navigate('next');
-            } else if (event.deltaY < 0) {
-                this.navigate('prev');
-            }
+                if (event.deltaY > 0) {
+                    this.navigate('next');
+                } else if (event.deltaY < 0) {
+                    this.navigate('prev');
+                }
             }, 0); // adjust delay as needed
 
             window.addEventListener('wheel', this.onWheelScroll, { passive: true });
@@ -322,13 +322,13 @@ export function initHome(pageType='home') {
             // Resume auto-scroll after 5s of inactivity
             this.userInteractedTimeout = setTimeout(() => {
                 this.userIsInteracting = false;
-                this.startAutoScroll();
+                pageType == 'home' && this.startAutoScroll();
             }, 5000);
         }
         startAutoScroll() {
             this.autoScrollInterval = setInterval(() => {
                 if (!this.isEntriesAnimating && !this.isFactsAnimating && !this.isFactsOpen) {
-                this.navigate('next');
+                    this.navigate('next');
                 }
             }, 4000);
         }
@@ -352,8 +352,8 @@ export function initHome(pageType='home') {
                 // Update toggle visibility for new section
                 const toggleCtrl = this.DOM.factsCtrls.toggle;
                 if (toggleCtrl) {
-                const factCount = newEntry.DOM.facts.items.length;
-                toggleCtrl.style.display = factCount > 2 ? 'block' : 'none';
+                    const factCount = newEntry.DOM.facts.items.length;
+                    toggleCtrl.style.display = factCount > 2 ? 'block' : 'none';
                 }
             };
 
@@ -387,7 +387,7 @@ export function initHome(pageType='home') {
                 }
             }).finished;
         }
-      
+
         toggleFactsContainer() {
             if (this.isFactsAnimating || (this.isEntriesAnimating && !this.isFactsOpen)) {
                 return;
@@ -404,7 +404,7 @@ export function initHome(pageType='home') {
                 this.isFactsAnimating = false;
 
                 // ✅ Toggle scrollable class for scrolling behavior
-                this.currentEntry.DOM.facts.wrapper.classList.toggle('scrollable', this.isFactsOpen);
+                // this.currentEntry.DOM.facts.wrapper.classList.toggle('scrollable', this.isFactsOpen);
 
                 // ✅ Toggle expanded class for background color on expander
                 this.currentEntry.DOM.expander.classList.toggle('expanded', this.isFactsOpen);
@@ -533,12 +533,24 @@ export function initHome(pageType='home') {
     };
 
     // Preload all the images in the page..
+    // imagesLoaded(document.querySelectorAll('img'), () => {
+    //     requestAnimationFrame(() => {
+    //         requestAnimationFrame(() => {
+    //             document.body.classList.remove('loading');
+    //             new Slideshow(document.querySelector('.sections'));
+    //         });
+    //     });
+    // });
+
     imagesLoaded(document.querySelectorAll('img'), () => {
-        requestAnimationFrame(() => {
+        setTimeout(() => {
             requestAnimationFrame(() => {
-                document.body.classList.remove('loading');
-                new Slideshow(document.querySelector('.sections'));
+                requestAnimationFrame(() => {
+                    document.body.classList.remove('loading');
+                    new Slideshow(document.querySelector('.sections'));
+                });
             });
-        });
+        }, 1200); // wait 1.2s to finish the loading animation
     });
+
 };

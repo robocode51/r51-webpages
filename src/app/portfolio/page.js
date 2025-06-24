@@ -23,11 +23,13 @@ useEffect(() => {
       }
 
       imagesLoaded(document.querySelectorAll('img'), () => {
-        requestAnimationFrame(() => {
+        setTimeout(() => {
           requestAnimationFrame(() => {
-            document.body.classList.remove('loading');
+            requestAnimationFrame(() => {
+              document.body.classList.remove('loading');
+            });
           });
-        });
+        }, 1200); // wait 1.2s to finish the loading animation
       });
     };
 
